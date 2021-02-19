@@ -1,7 +1,7 @@
 <?php
 include_once "database.php";
 
-class Words
+class mindWord
 {
     function __construct()
     {
