@@ -1,0 +1,42 @@
+.mind-map-container {
+	position: relative;
+	width: 100vw;
+	height: 100vh;
+	border: 2px solid greenyellow;
+	overflow: scroll;
+
+	.mind-map {
+		position: absolute;
+		width: 10000px;
+		height: 10000px;
+		border: 2px solid orangered;
+
+		.word {
+			position: absolute;
+		}
+
+		.debug {
+			position: absolute;
+			width: 5px;
+			height: 5px;
+			border-radius: 5px;
+			font-size: 14pt;
+			background-color: #ccc;
+			color: #ccc;
+			text-indent: 15px;
+
+			display: none;
+		}
+		&.debug {
+			.debug {
+				display: block;
+			}
+		}
+	}
+}
+
+.controls {
+	position: fixed;
+	top: 0;
+	right: 0;
+}
