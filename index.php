@@ -29,34 +29,35 @@ $words = $wordManager->get_mind_words();
 </head>
 
 <body>
-    <?php print_r($words);?>
+
 
     <div class="mind-map-container">
         <div class="mind-map debug">
-            <?php foreach($words as $i => $word):?>
-                <div class="word" style="left: <?php echo $word['x'];?>px; top: <?php echo $word['y'];?>px; ">
-                    <?php echo $word['word'];?>
-                </div>
-            <?php endforeach;?>
+            <?php foreach ($words as $i => $word) : ?>
+            <div class="word" style="left: <?php echo $word['x']; ?>px; top: <?php echo $word['y']; ?>px; ">
+                <?php echo $word['word']; ?>
+            </div>
+            <?php endforeach; ?>
 
-            <?php for($x = 1; $x < 20; $x++):?>
-                <?php for($y = 1; $y < 20; $y++):?>
-                    <div class="debug" style="left: <?php echo $x*500;?>px; top: <?php echo $y*500;?>px;">
-                        <?php echo $x*500;?>,<?php echo $y*500;?>
-                    </div>
-                <?php endfor;?>
-            <?php endfor;?>
+            <?php for ($x = 1; $x < 20; $x++) : ?>
+            <?php for ($y = 1; $y < 20; $y++) : ?>
+            <div class="debug" style="left: <?php echo $x * 500; ?>px; top: <?php echo $y * 500; ?>px;">
+                <?php echo $x * 500; ?>,<?php echo $y * 500; ?>
+            </div>
+            <?php endfor; ?>
+            <?php endfor; ?>
         </div>
     </div>
 
     <form class="controls" method="post">
-        <input type="hidden" name="_action" value="add_word">
+        <input type="hidden" name="_action" value="create_mind_word">
+
         <label>Whats The Word</label>
-        <input type="text" name="the_word" value="bird">
+        <input type="text" name="the_word">
         <br />
 
         <label>Whats Your Name</label>
-        <input type="text" name="the_name" value="Cody">
+        <input type="text" name="the_name">
         <br />
 
         <label>Font Color</label>
