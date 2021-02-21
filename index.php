@@ -2,12 +2,13 @@
 
 session_start();
 
-include "../includes/mindWords.php";
+include "includes/mindWords.php";
 
-// $wordManager = new mindWord();
+$wordManager = new mindWord();
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && !empty($_REQUEST['_action'])) {
-	$wordManager->handleAction($_REQUEST['_action'], $_REQUEST);
+    $wordManager->handleAction($_REQUEST['_action'], $_REQUEST);
 }
+$words = $wordManager->get_mind_words();
 ?>
 
 <!DOCTYPE html>
@@ -28,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && !empty($_REQUEST['_action'])) {
 </head>
 
 <body>
-
+    <?php print_r($words) ?>
     <form method="post">
         <input type="hidden" name="_action" value="add_word">
         <label>Whats The Word</label>
@@ -54,6 +55,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && !empty($_REQUEST['_action'])) {
 
         <input type="submit" value="Create">
     </form>
+
+
 
 
 </body>

@@ -21,11 +21,20 @@ class mindWord
     }
     public function get_mind_words()
     {
+        try {
+            $sql_get_words = 'SELECT word from mind_map';
+            $get_words_statement = $this->dbh->prepare($sql_get_words);
+            $get_words_statement->execute();
+            $word = $get_words_statement->fetchAll();
+            return $word;
+        } catch (PDOException $e) {
+            print_r('uh-oh!' . $e->getMessage() . '<br />');
+        }
+
         $mindWords = [];
         foreach ($this->dbh->query('SELECT * from mind_map') as $row) {
             $mindWords[] = $row;
         }
-        print_r($mindWords);
         return $mindWords;
     }
 }

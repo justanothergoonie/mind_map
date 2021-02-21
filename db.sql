@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: Feb 19, 2021 at 07:27 PM
+-- Generation Time: Feb 21, 2021 at 06:40 PM
 -- Server version: 5.7.26
 -- PHP Version: 7.4.2
 
@@ -23,7 +23,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `mind_map` (
   `id` int(11) NOT NULL,
   `name` varchar(19) NOT NULL,
-  `text` varchar(19) NOT NULL,
+  `word` varchar(19) NOT NULL,
   `x` int(5) NOT NULL,
   `y` int(5) NOT NULL,
   `size` int(9) NOT NULL,
@@ -38,8 +38,9 @@ CREATE TABLE `mind_map` (
 -- Dumping data for table `mind_map`
 --
 
-INSERT INTO `mind_map` (`id`, `name`, `text`, `x`, `y`, `size`, `color`, `font`, `rotation`, `created_at`, `deleted_at`) VALUES
-(1, 'Cody', 'Pressure', 100, 100, 10, 'Red', 'Roboto', 180, '2021-02-19 19:06:02', NULL);
+INSERT INTO `mind_map` (`id`, `name`, `word`, `x`, `y`, `size`, `color`, `font`, `rotation`, `created_at`, `deleted_at`) VALUES
+(1, 'Cody', 'Pressure', 100, 100, 10, 'Red', 'Roboto', 180, '2021-02-19 19:06:02', NULL),
+(2, 'Cody', 'under', 100, 100, 5000, 'Blue', 'Roboto', 360, '2021-02-21 02:13:45', NULL);
 
 --
 -- Indexes for dumped tables
@@ -59,4 +60,4 @@ ALTER TABLE `mind_map`
 -- AUTO_INCREMENT for table `mind_map`
 --
 ALTER TABLE `mind_map`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
