@@ -29,7 +29,7 @@ $words = $wordManager->get_mind_words();
 </head>
 
 <body>
-    <!-- <?php print_r($words);?> -->
+    <?php print_r($words);?>
 
     <div class="mind-map-container">
         <div class="mind-map debug">

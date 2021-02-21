@@ -2,8 +2,8 @@
 class Database
 {
     private $db_host = 'localhost';
-    private $db_user = 'web';
-    private $db_pass = 'web';
+    private $db_user = 'root';
+    private $db_pass = 'root';
     private $db_name = 'mind_map';
     private $error = '';
     private $dsn = '';
