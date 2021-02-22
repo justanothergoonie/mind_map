@@ -39,7 +39,6 @@ small,
 strike,
 strong,
 sub,
-sup,
 tt,
 var,
 b,
@@ -137,6 +136,10 @@ table {
 * {
 	box-sizing: border-box;
 	margin: 0;
+}
+
+.word {
+	font-size: 32px;
 }
 
 .mind-map-container {

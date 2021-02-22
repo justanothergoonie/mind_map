@@ -34,8 +34,14 @@ $words = $wordManager->get_mind_words();
     <div class="mind-map-container">
         <div class="mind-map debug">
             <?php foreach ($words as $i => $word) : ?>
-            <div class="word" style="left: <?php echo $word['x']; ?>px; top: <?php echo $word['y']; ?>px; ">
-                <?php echo $word['word']; ?>
+            <div class="word"
+                style="left: <?php echo $word['x']; ?>px; top: <?php echo $word['y']; ?>px; color: <?php echo $word['color']; ?>; font-family: <?php echo $word['font']; ?>; font-size:<?php echo $word['size'] ?>rem; transform:rotate(<?php echo $word['rotation'] ?>deg); ">
+                <p>
+                    <?php echo $word['word']; ?>
+                    <sup style="font-size: 1rem;">
+                        <?php echo $word['name'] ?>
+                    </sup>
+                </p>
             </div>
             <?php endforeach; ?>
 
@@ -52,25 +58,58 @@ $words = $wordManager->get_mind_words();
     <form class="controls" method="post">
         <input type="hidden" name="_action" value="create_mind_word">
 
-        <label>Whats The Word</label>
-        <input type="text" name="the_word">
-        <br />
-
         <label>Whats Your Name</label>
         <input type="text" name="the_name">
         <br />
 
-        <label>Font Color</label>
+        <label>Whats The Word</label>
+        <input type="text" name="the_word">
+        <br />
+
+        <div class="location-location-location">
+            <h2>Where You Want It?</h2>
+            <div class="x-location">
+                <label>X-Coordinate 1-10,000</label>
+                <input type="text" name="the_x_cord" id="">
+            </div>
+            <div class="y-location">
+                <label>Y-Coordinate 1-10,000</label>
+                <input type="text" name="the_y_cord" id="">
+            </div>
+        </div>
+        <br />
+        <label>How Big You Want It?</label>
+        <select name="the_size" id="">
+            <option value="1">Normal</option>
+            <option value="1.5">Bit Bigger</option>
+            <option value="2">Larger</option>
+            <option value="2.5">LARGER</option>
+            <option value="5">FUCK EVERYONE ELSE</option>
+        </select>
+        <br />
+        <div class="spin-me-right-round">
+            <h2>Put Some Spin On It</h2>
+            <label>0<sup>&#176</sup>-359<sup>&#176</sup> </label>
+            <input type="text" name="the_spin">
+        </div>
+        <br />
+        <label>Color</label>
         <select name="the_color">
             <option value="red">Red</option>
+            <option value="orange">Orange</option>
+            <option value="yellow">Yellow</option>
+            <option value="green">Green</option>
+            <option value="blue">Blue</option>
+            <option value="indigo">Indigo</option>
+            <option value="violet">Violet</option>
         </select>
         <br />
 
-        <label>Font Style</label>
+        <label>Style</label>
         <select name="the_font">
-            <option value="roboto">roboto</option>
+            <option value="Billy">Billy</option>
+            <option value="netsrak">Netsrak</option>
         </select>
-
         <br />
 
         <input type="submit" value="Create">
