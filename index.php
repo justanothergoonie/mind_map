@@ -34,8 +34,14 @@ $words = $wordManager->get_mind_words();
     <div class="mind-map-container">
         <div class="mind-map debug">
             <?php foreach ($words as $i => $word) : ?>
-            <div class="word"
-                style="left: <?php echo $word['x']; ?>px; top: <?php echo $word['y']; ?>px; color: <?php echo $word['color']; ?>; font-family: <?php echo $word['font']; ?>; font-size:<?php echo $word['size'] ?>rem; transform:rotate(<?php echo $word['rotation'] ?>deg); ">
+            <div class="word" style="
+                left:<?php echo $word['x']; ?>px; 
+                top:<?php echo $word['y']; ?>px; 
+                color:<?php echo $word['color']; ?>; 
+                font-family:<?php echo $word['font']; ?>; 
+                font-size:<?php echo $word['size'] ?>rem; 
+                transform:rotate(<?php echo $word['rotation'] ?>deg); 
+                ">
                 <p>
                     <?php echo $word['word']; ?>
                     <sup style="font-size: 1rem;">
@@ -81,16 +87,17 @@ $words = $wordManager->get_mind_words();
         <label>How Big You Want It?</label>
         <select name="the_size" id="">
             <option value="1">Normal</option>
-            <option value="1.5">Bit Bigger</option>
-            <option value="2">Larger</option>
-            <option value="2.5">LARGER</option>
+            <option value="1.2">Bit Bigger</option>
+            <option value="1.4">Larger</option>
+            <option value="1.6">LARGER</option>
+
             <option value="5">FUCK EVERYONE ELSE</option>
         </select>
         <br />
         <div class="spin-me-right-round">
             <h2>Put Some Spin On It</h2>
             <label>0<sup>&#176</sup>-359<sup>&#176</sup> </label>
-            <input type="text" name="the_spin">
+            <input type="text" name="the_spin" value="0">
         </div>
         <br />
         <label>Color</label>
