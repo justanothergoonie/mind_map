@@ -2,14 +2,26 @@
 	position: relative;
 	width: 100vw;
 	height: 100vh;
-	border: 2px solid greenyellow;
+	// border: 2px solid greenyellow;
 	overflow: scroll;
-
+	.make-a-word {
+		position: fixed;
+		right: 50%;
+		margin-top: 5%;
+		font-size: 2rem;
+		transform: translateX(50%);
+		&.showing {
+			display: block;
+		}
+		&.hidden {
+			display: none;
+		}
+	}
 	.mind-map {
 		position: absolute;
 		width: 10000px;
 		height: 10000px;
-		border: 2px solid orangered;
+		// border: 2px solid orangered;
 
 		.word {
 			position: absolute;
@@ -39,4 +51,34 @@
 	position: fixed;
 	top: 0;
 	right: 0;
+	display: none;
+	.save-word {
+		margin-top: 5%;
+		font-size: 2rem;
+		display: none;
+		transform: translateX(50%);
+		&.showing {
+			display: block;
+		}
+		&.hidden {
+			display: none;
+		}
+	}
+	.pseudo-input {
+		position: fixed;
+		right: 50%;
+		top: 50%;
+		transform: translateX(50%);
+		font-size: 1.5rem;
+	}
+	.x-location,
+	.y-location {
+		display: none;
+	}
+	&.showing {
+		display: block;
+	}
+	&.hidden {
+		display: none;
+	}
 }

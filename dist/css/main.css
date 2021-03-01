@@ -146,15 +146,30 @@ table {
 	position: relative;
 	width: 100vw;
 	height: 100vh;
-	border: 2px solid greenyellow;
 	overflow: scroll;
+}
+
+.mind-map-container .make-a-word {
+	position: fixed;
+	right: 50%;
+	margin-top: 5%;
+	font-size: 2rem;
+	-ms-transform: translateX(50%);
+	    transform: translateX(50%);
+}
+
+.mind-map-container .make-a-word.showing {
+	display: block;
+}
+
+.mind-map-container .make-a-word.hidden {
+	display: none;
 }
 
 .mind-map-container .mind-map {
 	position: absolute;
 	width: 10000px;
 	height: 10000px;
-	border: 2px solid orangered;
 }
 
 .mind-map-container .mind-map .word {
@@ -181,6 +196,45 @@ table {
 	position: fixed;
 	top: 0;
 	right: 0;
+	display: none;
+}
+
+.controls .save-word {
+	margin-top: 5%;
+	font-size: 2rem;
+	display: none;
+	-ms-transform: translateX(50%);
+	    transform: translateX(50%);
+}
+
+.controls .save-word.showing {
+	display: block;
+}
+
+.controls .save-word.hidden {
+	display: none;
+}
+
+.controls .pseudo-input {
+	position: fixed;
+	right: 50%;
+	top: 50%;
+	-ms-transform: translateX(50%);
+	    transform: translateX(50%);
+	font-size: 1.5rem;
+}
+
+.controls .x-location,
+.controls .y-location {
+	display: none;
+}
+
+.controls.showing {
+	display: block;
+}
+
+.controls.hidden {
+	display: none;
 }
 
 /*# sourceMappingURL=main.css.map */

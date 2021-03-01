@@ -33,6 +33,7 @@ $words = $wordManager->get_mind_words();
 
     <div class="mind-map-container">
         <div class="mind-map debug">
+            <button class="make-a-word">Make a Word</button>
             <?php foreach ($words as $i => $word) : ?>
             <div class="word" style="
                 left:<?php echo $word['x']; ?>px; 
@@ -61,8 +62,11 @@ $words = $wordManager->get_mind_words();
         </div>
     </div>
 
+
+
     <form class="controls" method="post">
         <input type="hidden" name="_action" value="create_mind_word">
+
 
         <label>Whats Your Name</label>
         <input type="text" name="the_name">
@@ -72,21 +76,23 @@ $words = $wordManager->get_mind_words();
         <input type="text" name="the_word">
         <br />
 
+        <span class="pseudo-input" contenteditable="true">Add your word here, scroll to place</span>
+
         <div class="location-location-location">
             <h2>Where You Want It?</h2>
             <div class="x-location">
                 <label>X-Coordinate 1-10,000</label>
-                <input type="text" name="the_x_cord" id="">
+                <input type="text" name="the_x_cord" class="the-x-cord">
             </div>
             <div class="y-location">
                 <label>Y-Coordinate 1-10,000</label>
-                <input type="text" name="the_y_cord" id="">
+                <input type="text" name="the_y_cord" class="the-y-cord">
             </div>
         </div>
         <br />
         <label>How Big You Want It?</label>
         <select name="the_size" id="">
-            <option value="1">Normal</option>
+            <option value="2">12pt</option>
             <option value="1.2">Bit Bigger</option>
             <option value="1.4">Larger</option>
             <option value="1.6">LARGER</option>
@@ -118,12 +124,10 @@ $words = $wordManager->get_mind_words();
             <option value="netsrak">Netsrak</option>
         </select>
         <br />
-
-        <input type="submit" value="Create">
+        <input class="save-word" type="submit" value="Create Word">
     </form>
-
-
     <script src="dist/js/main.js"></script>
+    <script src="dist/js/toggle.js"></script>
 </body>
 
 </html>
