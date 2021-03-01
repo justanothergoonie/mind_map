@@ -66,17 +66,26 @@ $words = $wordManager->get_mind_words();
 
     <form class="controls" method="post">
         <input type="hidden" name="_action" value="create_mind_word">
+        <div class="pseudo-input">
+            <span class="pseudo-word-input" contenteditable="true">
+                Add your word here, scroll to place
+            </span>
+            <span class="pseudo-name-input" contenteditable="true">
+                Your Name
+            </span>
+        </div>
 
 
-        <label>Whats Your Name</label>
-        <input type="text" name="the_name">
-        <br />
+        <div class="hidden">
+            <input class="your-name" type="text" name="the_name" value="">
+            <input class="your-word" type="text" name="the_word" value="">
+        </div>
 
-        <label>Whats The Word</label>
-        <input type="text" name="the_word">
-        <br />
 
-        <span class="pseudo-input" contenteditable="true">Add your word here, scroll to place</span>
+
+
+
+
 
         <div class="location-location-location">
             <h2>Where You Want It?</h2>

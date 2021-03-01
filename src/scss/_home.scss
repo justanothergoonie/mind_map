@@ -71,8 +71,7 @@
 		transform: translateX(50%);
 		font-size: 1.5rem;
 	}
-	.x-location,
-	.y-location {
+	.location-location-location {
 		display: none;
 	}
 	&.showing {
@@ -81,4 +80,7 @@
 	&.hidden {
 		display: none;
 	}
+}
+.hidden {
+	display: none;
 }

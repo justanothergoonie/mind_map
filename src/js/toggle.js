@@ -14,17 +14,24 @@ let toggleControlsOff = function () {
 };
 
 newWord.addEventListener('click', toggleControlsOn);
-createWord.addEventListener('click', toggleControlsOff);
 
 let mindMapContainer = document.querySelector('.mind-map-container');
 let theXCord = document.querySelector('.the-x-cord');
 let theYCord = document.querySelector('.the-y-cord');
+let theWord = document.querySelector('.your-word');
+let theName = document.querySelector('.your-name');
+let pseudoWordInput = document.querySelector('.pseudo-word-input');
+let pseudoNameInput = document.querySelector('.pseudo-name-input');
 
 let whereTheWordGo = function () {
 	let xPos = mindMapContainer.scrollLeft + window.innerWidth / 2 + 0.5;
 	let yPos = mindMapContainer.scrollTop + window.innerHeight / 2 + 0.5;
 	theXCord.value = xPos;
 	theYCord.value = yPos;
-	console.log(xPos, yPos);
+	theWord.value = pseudoWordInput.innerHTML;
+	theName.value = pseudoNameInput.innerHTML;
+	console.log(pseudoNameInput.innerHTML);
 };
 mindMapContainer.addEventListener('click', whereTheWordGo);
+createWord.addEventListener('click', whereTheWordGo);
+createWord.addEventListener('click', toggleControlsOff);

@@ -17,18 +17,25 @@ var toggleControlsOff = function toggleControlsOff() {
 };
 
 newWord.addEventListener('click', toggleControlsOn);
-createWord.addEventListener('click', toggleControlsOff);
 var mindMapContainer = document.querySelector('.mind-map-container');
 var theXCord = document.querySelector('.the-x-cord');
 var theYCord = document.querySelector('.the-y-cord');
+var theWord = document.querySelector('.your-word');
+var theName = document.querySelector('.your-name');
+var pseudoWordInput = document.querySelector('.pseudo-word-input');
+var pseudoNameInput = document.querySelector('.pseudo-name-input');
 
 var whereTheWordGo = function whereTheWordGo() {
   var xPos = mindMapContainer.scrollLeft + window.innerWidth / 2 + 0.5;
   var yPos = mindMapContainer.scrollTop + window.innerHeight / 2 + 0.5;
   theXCord.value = xPos;
   theYCord.value = yPos;
-  console.log(xPos, yPos);
+  theWord.value = pseudoWordInput.innerHTML;
+  theName.value = pseudoNameInput.innerHTML;
+  console.log(pseudoNameInput.innerHTML);
 };
 
 mindMapContainer.addEventListener('click', whereTheWordGo);
+createWord.addEventListener('click', whereTheWordGo);
+createWord.addEventListener('click', toggleControlsOff);
 //# sourceMappingURL=toggle.js.map

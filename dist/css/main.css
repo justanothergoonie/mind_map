@@ -224,8 +224,7 @@ table {
 	font-size: 1.5rem;
 }
 
-.controls .x-location,
-.controls .y-location {
+.controls .location-location-location {
 	display: none;
 }
 
@@ -234,6 +233,10 @@ table {
 }
 
 .controls.hidden {
+	display: none;
+}
+
+.hidden {
 	display: none;
 }
 
