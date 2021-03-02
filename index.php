@@ -68,10 +68,10 @@ $words = $wordManager->get_mind_words();
     <form class="controls" method="post">
         <input type="hidden" name="_action" value="create_mind_word">
         <div class="pseudo-input">
-            <span class="pseudo-word-input" contenteditable="true">
+            <span class="pseudo-word-input" contenteditable="true" onclick="this.select();">
                 Add your word here, scroll to place
             </span>
-            <span class="pseudo-name-input" contenteditable="true">
+            <span class="pseudo-name-input" contenteditable="true" onclick="this.select();">
                 Your Name
             </span>
         </div>
@@ -94,10 +94,10 @@ $words = $wordManager->get_mind_words();
             <label>How Big You Want It?</label>
             <select name="the_size" id="">
                 <option value="2">12pt</option>
-                <option value="2.4">Bit Bigger</option>
-                <option value="2.8">Larger</option>
-                <option value="3.2">LARGER</option>
-                <option value="5">FUCK EVERYONE ELSE</option>
+                <option value="2.4">16pt</option>
+                <option value="2.8">20pt</option>
+                <option value="3.2">24pt</option>
+                <option value="5">42pt</option>
             </select>
         </div>
 

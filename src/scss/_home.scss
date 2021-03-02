@@ -50,10 +50,11 @@
 .controls {
 	display: none;
 	.save-word {
-		margin-top: 5%;
-		font-size: 2rem;
-		display: none;
-		// transform: translateX(50%);
+		@include bp-med {
+			margin-top: 5%;
+			font-size: 2rem;
+			display: none;
+		}
 		&.showing {
 			display: block;
 		}
@@ -68,13 +69,14 @@
 		width: 70%;
 		height: 10%;
 		transform: translateX(50%);
-		font-size: 1.5rem;
+		font-size: 1rem;
 		display: flex;
 		flex-direction: column;
 		justify-content: space-evenly;
 		align-content: center;
+		text-align: center;
 		@include bp-med {
-			// font-size: 1.5rem;
+			font-size: 1.5rem;
 			width: revert;
 			height: 7%;
 		}
@@ -88,22 +90,24 @@
 	div {
 		display: flex;
 		flex-direction: column;
-
+		align-content: center;
 		h2,
 		label {
 			font-size: 1.3rem;
 			margin-bottom: 0.5rem;
 			color: white;
 		}
+		select {
+			@include bp-med {
+				font-size: 1.2rem;
+			}
+		}
 		.spin-range {
 			display: flex;
 			flex-direction: row;
 			justify-content: space-between;
 			input {
-				width: 85%;
-				@include bp-med {
-					width: 75%;
-				}
+				width: 75%;
 			}
 		}
 		&.hidden {
@@ -111,9 +115,6 @@
 		}
 	}
 
-	select {
-		font-size: 1.2rem;
-	}
 	&.showing {
 		position: fixed;
 		top: 0;
@@ -121,7 +122,7 @@
 		margin: 1%;
 		padding: 3%;
 		width: 98%;
-		height: 40%;
+		height: 48%;
 		display: flex;
 		flex-direction: column;
 		justify-content: space-around;
@@ -129,7 +130,7 @@
 		@include bp-med {
 			width: 25%;
 			right: 0;
-			// height: revert;
+			height: 40%;
 			margin: 1%;
 			padding: 1%;
 		}

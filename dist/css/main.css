@@ -196,10 +196,12 @@ table {
 	display: none;
 }
 
-.controls .save-word {
-	margin-top: 5%;
-	font-size: 2rem;
-	display: none;
+@media screen and (min-width: 768px) {
+	.controls .save-word {
+		margin-top: 5%;
+		font-size: 2rem;
+		display: none;
+	}
 }
 
 .controls .save-word.showing {
@@ -218,15 +220,17 @@ table {
 	height: 10%;
 	-ms-transform: translateX(50%);
 	    transform: translateX(50%);
-	font-size: 1.5rem;
+	font-size: 1rem;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-evenly;
 	align-content: center;
+	text-align: center;
 }
 
 @media screen and (min-width: 768px) {
 	.controls .pseudo-input {
+		font-size: 1.5rem;
 		width: revert;
 		height: 7%;
 	}
@@ -242,6 +246,7 @@ table {
 .controls div {
 	display: flex;
 	flex-direction: column;
+	align-content: center;
 }
 
 .controls div h2,
@@ -251,6 +256,12 @@ table {
 	color: white;
 }
 
+@media screen and (min-width: 768px) {
+	.controls div select {
+		font-size: 1.2rem;
+	}
+}
+
 .controls div .spin-range {
 	display: flex;
 	flex-direction: row;
@@ -258,21 +269,11 @@ table {
 }
 
 .controls div .spin-range input {
-	width: 85%;
-}
-
-@media screen and (min-width: 768px) {
-	.controls div .spin-range input {
-		width: 75%;
-	}
+	width: 75%;
 }
 
 .controls div.hidden {
 	display: none;
-}
-
-.controls select {
-	font-size: 1.2rem;
 }
 
 .controls.showing {
@@ -281,7 +282,7 @@ table {
 	margin: 1%;
 	padding: 3%;
 	width: 98%;
-	height: 40%;
+	height: 48%;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-around;
@@ -292,6 +293,7 @@ table {
 	.controls.showing {
 		width: 25%;
 		right: 0;
+		height: 40%;
 		margin: 1%;
 		padding: 1%;
 	}
