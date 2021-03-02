@@ -239,11 +239,36 @@ table {
 	justify-content: center;
 }
 
-.controls h2,
-.controls label {
+.controls div {
+	display: flex;
+	flex-direction: column;
+}
+
+.controls div h2,
+.controls div label {
 	font-size: 1.3rem;
 	margin-bottom: 0.5rem;
 	color: white;
+}
+
+.controls div .spin-range {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.controls div .spin-range input {
+	width: 85%;
+}
+
+@media screen and (min-width: 768px) {
+	.controls div .spin-range input {
+		width: 75%;
+	}
+}
+
+.controls div.hidden {
+	display: none;
 }
 
 .controls select {
@@ -253,18 +278,20 @@ table {
 .controls.showing {
 	position: fixed;
 	top: 0;
-	right: 0;
-	margin: 3%;
+	margin: 1%;
 	padding: 3%;
-	width: 60%;
+	width: 98%;
+	height: 40%;
 	display: flex;
 	flex-direction: column;
+	justify-content: space-around;
 	background-color: rgba(0, 0, 20, 0.5);
 }
 
 @media screen and (min-width: 768px) {
 	.controls.showing {
-		width: 20%;
+		width: 25%;
+		right: 0;
 		margin: 1%;
 		padding: 1%;
 	}

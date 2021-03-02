@@ -23,7 +23,9 @@ $words = $wordManager->get_mind_words();
 
     <link rel="stylesheet" href="dist/css/main.css" />
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="dist/css/color-picker.css" />
 </head>
 
@@ -34,7 +36,7 @@ $words = $wordManager->get_mind_words();
         <div class="mind-map debug">
             <button class="make-a-word">Make a Word</button>
             <?php foreach ($words as $i => $word) : ?>
-                <div class="word" style="
+            <div class="word" style="
                 left:<?php echo $word['x']; ?>px; 
                 top:<?php echo $word['y']; ?>px; 
                 color:<?php echo $word['color']; ?>; 
@@ -42,21 +44,21 @@ $words = $wordManager->get_mind_words();
                  
                 transform:rotate(<?php echo $word['rotation']; ?>deg); 
                 ">
-                    <p style="font-size:<?php echo $word['size']; ?>rem;">
-                        <?php echo $word['word']; ?>
-                        <sup style="font-size: 1rem;">
-                            <?php echo $word['name'] ?>
-                        </sup>
-                    </p>
-                </div>
+                <p style="font-size:<?php echo $word['size']; ?>rem;">
+                    <?php echo $word['word']; ?>
+                    <sup style="font-size: 1rem;">
+                        <?php echo $word['name'] ?>
+                    </sup>
+                </p>
+            </div>
             <?php endforeach; ?>
 
             <?php for ($x = 1; $x < 20; $x++) : ?>
-                <?php for ($y = 1; $y < 20; $y++) : ?>
-                    <div class="debug" style="left: <?php echo $x * 500; ?>px; top: <?php echo $y * 500; ?>px;">
-                        <?php echo $x * 500; ?>,<?php echo $y * 500; ?>
-                    </div>
-                <?php endfor; ?>
+            <?php for ($y = 1; $y < 20; $y++) : ?>
+            <div class="debug" style="left: <?php echo $x * 500; ?>px; top: <?php echo $y * 500; ?>px;">
+                <?php echo $x * 500; ?>,<?php echo $y * 500; ?>
+            </div>
+            <?php endfor; ?>
             <?php endfor; ?>
         </div>
     </div>
@@ -88,42 +90,48 @@ $words = $wordManager->get_mind_words();
                 </div>
             </div>
         </div>
-        <label>How Big You Want It?</label>
-        <select name="the_size" id="">
-            <option value="2">12pt</option>
-            <option value="2.4">Bit Bigger</option>
-            <option value="2.8">Larger</option>
-            <option value="3.2">LARGER</option>
-            <option value="5">FUCK EVERYONE ELSE</option>
-        </select>
-        <br />
+        <div>
+            <label>How Big You Want It?</label>
+            <select name="the_size" id="">
+                <option value="2">12pt</option>
+                <option value="2.4">Bit Bigger</option>
+                <option value="2.8">Larger</option>
+                <option value="3.2">LARGER</option>
+                <option value="5">FUCK EVERYONE ELSE</option>
+            </select>
+        </div>
+
         <div class="spin-me-right-round">
             <h2>Put Some Spin On It</h2>
-            <label>0<sup>&#176</sup>-359<sup>&#176</sup> </label>
-            <input type="text" name="the_spin" value="0">
+            <div class="spin-range">
+                <label>0<sup>&#176</sup>-359<sup>&#176</sup> </label>
+                <input type="text" name="the_spin" value="0">
+            </div>
+
         </div>
-        <br />
+
         <!-- <div class="picker-btn">
 
         </div> -->
-        <label>Color</label>
-        <select name="the_color">
-            <option value="red">Red</option>
-            <option value="orange">Orange</option>
-            <option value="yellow">Yellow</option>
-            <option value="green">Green</option>
-            <option value="blue">Blue</option>
-            <option value="indigo">Indigo</option>
-            <option value="violet">Violet</option>
-        </select>
-        <br />
-
-        <label>Style</label>
-        <select name="the_font">
-            <option value="Billy">Billy</option>
-            <option value="netsrak">Netsrak</option>
-        </select>
-        <br />
+        <div>
+            <label>Color</label>
+            <select name="the_color">
+                <option value="red">Red</option>
+                <option value="orange">Orange</option>
+                <option value="yellow">Yellow</option>
+                <option value="green">Green</option>
+                <option value="blue">Blue</option>
+                <option value="indigo">Indigo</option>
+                <option value="violet">Violet</option>
+            </select>
+        </div>
+        <div>
+            <label>Style</label>
+            <select name="the_font">
+                <option value="Billy">Billy</option>
+                <option value="netsrak">Netsrak</option>
+            </select>
+        </div>
         <input class="save-word" type="submit" value="Create Word">
     </form>
     <script src="dist/js/main.js"></script>
