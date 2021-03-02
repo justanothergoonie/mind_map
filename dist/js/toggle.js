@@ -30,9 +30,9 @@ var whereTheWordGo = function whereTheWordGo() {
   var yPos = mindMapContainer.scrollTop + window.innerHeight / 2 + 0.5;
   theXCord.value = xPos;
   theYCord.value = yPos;
-  theWord.value = pseudoWordInput.innerHTML;
-  theName.value = pseudoNameInput.innerHTML;
-  console.log(pseudoNameInput.innerHTML);
+  theWord.value = pseudoWordInput.innerText;
+  theName.value = pseudoNameInput.innerText;
+  console.log(theXCord.value, theYCord.value, theWord.value, theName.value);
 };
 
 mindMapContainer.addEventListener('click', whereTheWordGo);

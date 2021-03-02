@@ -26,6 +26,7 @@ $words = $wordManager->get_mind_words();
     <link
         href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="dist/css/color-picker.css" />
 </head>
 
 <body>
@@ -40,10 +41,10 @@ $words = $wordManager->get_mind_words();
                 top:<?php echo $word['y']; ?>px; 
                 color:<?php echo $word['color']; ?>; 
                 font-family:<?php echo $word['font']; ?>; 
-                font-size:<?php echo $word['size'] ?>rem; 
-                transform:rotate(<?php echo $word['rotation'] ?>deg); 
+                 
+                transform:rotate(<?php echo $word['rotation']; ?>deg); 
                 ">
-                <p>
+                <p style="font-size:<?php echo $word['size']; ?>rem;">
                     <?php echo $word['word']; ?>
                     <sup style="font-size: 1rem;">
                         <?php echo $word['name'] ?>
@@ -74,38 +75,27 @@ $words = $wordManager->get_mind_words();
                 Your Name
             </span>
         </div>
-
-
         <div class="hidden">
             <input class="your-name" type="text" name="the_name" value="">
             <input class="your-word" type="text" name="the_word" value="">
-        </div>
-
-
-
-
-
-
-
-        <div class="location-location-location">
-            <h2>Where You Want It?</h2>
-            <div class="x-location">
-                <label>X-Coordinate 1-10,000</label>
-                <input type="text" name="the_x_cord" class="the-x-cord">
-            </div>
-            <div class="y-location">
-                <label>Y-Coordinate 1-10,000</label>
-                <input type="text" name="the_y_cord" class="the-y-cord">
+            <div class="location-location-location">
+                <h2>Where You Want It?</h2>
+                <div class="x-location">
+                    <label>X-Coordinate 1-10,000</label>
+                    <input type="text" name="the_x_cord" class="the-x-cord">
+                </div>
+                <div class="y-location">
+                    <label>Y-Coordinate 1-10,000</label>
+                    <input type="text" name="the_y_cord" class="the-y-cord">
+                </div>
             </div>
         </div>
-        <br />
         <label>How Big You Want It?</label>
         <select name="the_size" id="">
             <option value="2">12pt</option>
-            <option value="1.2">Bit Bigger</option>
-            <option value="1.4">Larger</option>
-            <option value="1.6">LARGER</option>
-
+            <option value="2.4">Bit Bigger</option>
+            <option value="2.8">Larger</option>
+            <option value="3.2">LARGER</option>
             <option value="5">FUCK EVERYONE ELSE</option>
         </select>
         <br />
@@ -115,6 +105,9 @@ $words = $wordManager->get_mind_words();
             <input type="text" name="the_spin" value="0">
         </div>
         <br />
+        <!-- <div class="picker-btn">
+
+        </div> -->
         <label>Color</label>
         <select name="the_color">
             <option value="red">Red</option>
@@ -137,6 +130,9 @@ $words = $wordManager->get_mind_words();
     </form>
     <script src="dist/js/main.js"></script>
     <script src="dist/js/toggle.js"></script>
+    <script src="dist/js/color-picker.min.js"></script>
+    <script src="dist/js/picker.js"></script>
+
 </body>
 
 </html>

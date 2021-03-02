@@ -224,10 +224,6 @@ table {
 	font-size: 1.5rem;
 }
 
-.controls .location-location-location {
-	display: none;
-}
-
 .controls.showing {
 	display: block;
 }
