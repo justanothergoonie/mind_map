@@ -193,9 +193,6 @@ table {
 }
 
 .controls {
-	position: fixed;
-	top: 0;
-	right: 0;
 	display: none;
 }
 
@@ -203,8 +200,6 @@ table {
 	margin-top: 5%;
 	font-size: 2rem;
 	display: none;
-	-ms-transform: translateX(50%);
-	    transform: translateX(50%);
 }
 
 .controls .save-word.showing {
@@ -219,13 +214,60 @@ table {
 	position: fixed;
 	right: 50%;
 	top: 50%;
+	width: 70%;
+	height: 10%;
 	-ms-transform: translateX(50%);
 	    transform: translateX(50%);
 	font-size: 1.5rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	align-content: center;
+}
+
+@media screen and (min-width: 768px) {
+	.controls .pseudo-input {
+		width: revert;
+		height: 7%;
+	}
+}
+
+.controls .pseudo-input span {
+	display: flex;
+	align-items: center;
+	height: 50%;
+	justify-content: center;
+}
+
+.controls h2,
+.controls label {
+	font-size: 1.3rem;
+	margin-bottom: 0.5rem;
+	color: white;
+}
+
+.controls select {
+	font-size: 1.2rem;
 }
 
 .controls.showing {
-	display: block;
+	position: fixed;
+	top: 0;
+	right: 0;
+	margin: 3%;
+	padding: 3%;
+	width: 60%;
+	display: flex;
+	flex-direction: column;
+	background-color: rgba(0, 0, 20, 0.5);
+}
+
+@media screen and (min-width: 768px) {
+	.controls.showing {
+		width: 20%;
+		margin: 1%;
+		padding: 1%;
+	}
 }
 
 .controls.hidden {
