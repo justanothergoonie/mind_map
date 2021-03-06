@@ -23,9 +23,7 @@ $words = $wordManager->get_mind_words();
 
     <link rel="stylesheet" href="dist/css/main.css" />
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="dist/css/color-picker.css" />
 </head>
 
@@ -34,31 +32,31 @@ $words = $wordManager->get_mind_words();
 
     <div class="mind-map-container">
         <div class="mind-map debug">
-            <button class="make-a-word">Make a Word</button>
+            <input type="button" class="make-a-word">Make a Word</input>
             <?php foreach ($words as $i => $word) : ?>
-            <div class="word" style="
+                <div class="word <?php echo $word['style']; ?>" style="
                 left:<?php echo $word['x']; ?>px; 
                 top:<?php echo $word['y']; ?>px; 
-                color:<?php echo $word['color']; ?>; 
+               
                 font-family:<?php echo $word['font']; ?>; 
                  
                 transform:rotate(<?php echo $word['rotation']; ?>deg); 
                 ">
-                <p style="font-size:<?php echo $word['size']; ?>rem;">
-                    <?php echo $word['word']; ?>
-                    <sup style="font-size: 1rem;">
-                        <?php echo $word['name'] ?>
-                    </sup>
-                </p>
-            </div>
+                    <p style="font-size:<?php echo $word['size']; ?>rem;">
+                        <?php echo $word['word']; ?>
+                        <sup style="font-size: 1rem;">
+                            <?php echo $word['name'] ?>
+                        </sup>
+                    </p>
+                </div>
             <?php endforeach; ?>
 
             <?php for ($x = 1; $x < 20; $x++) : ?>
-            <?php for ($y = 1; $y < 20; $y++) : ?>
-            <div class="debug" style="left: <?php echo $x * 500; ?>px; top: <?php echo $y * 500; ?>px;">
-                <?php echo $x * 500; ?>,<?php echo $y * 500; ?>
-            </div>
-            <?php endfor; ?>
+                <?php for ($y = 1; $y < 20; $y++) : ?>
+                    <div class="debug" style="left: <?php echo $x * 500; ?>px; top: <?php echo $y * 500; ?>px;">
+                        <?php echo $x * 500; ?>,<?php echo $y * 500; ?>
+                    </div>
+                <?php endfor; ?>
             <?php endfor; ?>
         </div>
     </div>
@@ -89,8 +87,9 @@ $words = $wordManager->get_mind_words();
                     <input type="text" name="the_y_cord" class="the-y-cord">
                 </div>
             </div>
+            <input type="hidden" name="the_style" value="" class="the-true-style">
         </div>
-        <div>
+        <div class="font-size">
             <label>How Big You Want It?</label>
             <select name="the_size" id="">
                 <option value="2">12pt</option>
@@ -113,7 +112,21 @@ $words = $wordManager->get_mind_words();
         <!-- <div class="picker-btn">
 
         </div> -->
-        <div>
+        <div class="styles-container">
+            <div class="styles-button">
+                <img src="dist/img/StyleIcon.png" alt="">
+            </div>
+            <div class="styles">
+                <input type="button" class="style-1 style-buttons" value="red-TB">
+                <input type="button" class="style-2 style-buttons" value="green-TB">
+                <input type="button" class="style-3 style-buttons" value="blue-TB">
+                <input type="button" class="style-4 style-buttons" value="red-bkg">
+                <input type="button" class="style-5 style-buttons" value="green-bkg">
+                <input type="button" class="style-6 style-buttons" value="blue-bkg">
+            </div>
+
+        </div>
+        <div class="colors">
             <label>Color</label>
             <select name="the_color">
                 <option value="red">Red</option>
@@ -125,7 +138,7 @@ $words = $wordManager->get_mind_words();
                 <option value="violet">Violet</option>
             </select>
         </div>
-        <div>
+        <div class="font">
             <label>Style</label>
             <select name="the_font">
                 <option value="Billy">Billy</option>
