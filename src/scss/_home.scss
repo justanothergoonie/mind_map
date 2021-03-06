@@ -5,11 +5,21 @@
 	// border: 2px solid greenyellow;
 	overflow: scroll;
 	.make-a-word {
+		background-image: url(../../dist/img/newWordIcon.png);
+		background-repeat: no-repeat;
+		background-color: transparent;
+		background-size: cover;
+		border: none;
+		width: 5rem;
+		height: 5rem;
 		position: fixed;
+
 		right: 50%;
-		margin-top: 5%;
+		// margin-top: 5%;
+		top: 50%;
 		font-size: 2rem;
-		transform: translateX(50%);
+		transform: translate(50%, -50%);
+		z-index: 5;
 		&.showing {
 			display: block;
 		}
@@ -24,7 +34,38 @@
 		// border: 2px solid orangered;
 
 		.word {
+			padding: 5px;
 			position: absolute;
+			&.red-TB {
+				color: #d41c10;
+				border: 3px solid #d41c10;
+				background-color: #ecf1c4;
+			}
+			&.green-TB {
+				color: #60961d;
+				border: 3px solid #60961d;
+				background-color: #ecf1c4;
+			}
+			&.blue-TB {
+				color: #32a0e2;
+				border: 3px solid #32a0e2;
+				background-color: #ecf1c4;
+			}
+			&.red-bkg {
+				color: #ecf1c4;
+				border: 3px solid #010d0d;
+				background-color: #d41c10;
+			}
+			&.green-bkg {
+				color: #ecf1c4;
+				border: 3px solid #010d0d;
+				background-color: #60961d;
+			}
+			&.blue-bkg {
+				color: #ecf1c4;
+				border: 3px solid #010d0d;
+				background-color: #32a0e2;
+			}
 		}
 
 		.debug {
@@ -113,24 +154,103 @@
 		&.hidden {
 			display: none;
 		}
-	}
+		&.styles-container {
+			display: flex;
+			flex-direction: row-reverse;
+			position: relative;
+			.styles {
+				transition: all 0.3s ease;
+				display: flex;
+				flex-direction: row;
+				opacity: 0;
+				position: absolute;
+				left: 150%;
+				height: 100%;
+				input {
+					width: 16%;
+					padding: 0;
+				}
+				.style-1 {
+					background-image: url(../../dist/img/Style1.png);
+					background-repeat: no-repeat;
+					background-color: transparent;
+					background-position: center;
 
+					border: none;
+					color: transparent;
+				}
+				.style-2 {
+					background-image: url(../../dist/img/Style2.png);
+					background-repeat: no-repeat;
+					background-color: transparent;
+					background-position: center;
+
+					border: none;
+					color: transparent;
+				}
+				.style-3 {
+					background-image: url(../../dist/img/Style3.png);
+					background-repeat: no-repeat;
+					background-color: transparent;
+					background-position: center;
+
+					border: none;
+					color: transparent;
+				}
+				.style-4 {
+					background-image: url(../../dist/img/Style4.png);
+					background-repeat: no-repeat;
+					background-color: transparent;
+					background-position: center;
+
+					border: none;
+					color: transparent;
+				}
+				.style-5 {
+					background-image: url(../../dist/img/Style5.png);
+					background-repeat: no-repeat;
+					background-color: transparent;
+					background-position: center;
+
+					border: none;
+					color: transparent;
+				}
+				.style-6 {
+					background-image: url(../../dist/img/Style6.png);
+					background-repeat: no-repeat;
+					background-color: transparent;
+					background-position: center;
+
+					border: none;
+					color: transparent;
+				}
+
+				&.showing {
+					display: flex;
+					flex-direction: row;
+					opacity: 1;
+					transition: all 0.5s ease;
+					left: -75%;
+				}
+			}
+		}
+	}
 	&.showing {
 		position: fixed;
 		top: 0;
 		// right: 0;
 		margin: 1%;
 		padding: 3%;
-		width: 98%;
-		height: 48%;
+		// width: 98%;
+		// height: 48%;
 		display: flex;
 		flex-direction: column;
 		justify-content: space-around;
 		background-color: rgba(0, 0, 20, 0.5);
 		@include bp-med {
-			width: 25%;
+			// width: 25%;
 			right: 0;
-			height: 40%;
+			// height: 40%;
 			margin: 1%;
 			padding: 1%;
 		}
@@ -139,6 +259,7 @@
 		display: none;
 	}
 }
+
 .hidden {
 	display: none;
 }

@@ -3,6 +3,8 @@
 var newWord = document.querySelector('.make-a-word');
 var controls = document.querySelector('.controls');
 var createWord = document.querySelector('.save-word');
+var styleBtn = document.querySelector('.styles-button');
+var styleOpts = document.querySelector('.styles');
 
 var toggleControlsOn = function toggleControlsOn() {
   newWord.classList.toggle('hidden');
@@ -10,13 +12,13 @@ var toggleControlsOn = function toggleControlsOn() {
   createWord.classList.toggle('showing');
 };
 
-var toggleControlsOff = function toggleControlsOff() {
-  newWord.classList.toggle('showing');
-  controls.classList.toggle('hidden');
-  createWord.classList.toggle('hidden');
+newWord.addEventListener('click', toggleControlsOn);
+
+var toggleStyles = function toggleStyles() {
+  styleOpts.classList.toggle('showing');
 };
 
-newWord.addEventListener('click', toggleControlsOn);
+styleBtn.addEventListener('click', toggleStyles);
 var mindMapContainer = document.querySelector('.mind-map-container');
 var theXCord = document.querySelector('.the-x-cord');
 var theYCord = document.querySelector('.the-y-cord');
@@ -37,5 +39,4 @@ var whereTheWordGo = function whereTheWordGo() {
 
 mindMapContainer.addEventListener('click', whereTheWordGo);
 createWord.addEventListener('click', whereTheWordGo);
-createWord.addEventListener('click', toggleControlsOff);
 //# sourceMappingURL=toggle.js.map

@@ -43,24 +43,25 @@ class mindWord
         try {
             $try_mind_word_creator = $vars['the_name'];
             $try_mind_word = $vars['the_word'];
-            $try_mind_word_color = $vars['the_color'];
+            // $try_mind_word_color = $vars['the_color'];
             $try_mind_word_font = $vars['the_font'];
             $try_mind_word_x_cord = $vars['the_x_cord'];
             $try_mind_word_y_cord = $vars['the_y_cord'];
             $try_mind_word_size = $vars['the_size'];
             $try_mind_word_spin = $vars['the_spin'];
+            $try_mind_word_style = $vars['the_style'];
 
             if (!empty($try_mind_word) && !empty($try_mind_word_creator)) {
                 $sql_add_words =
-                    'INSERT INTO mind_map (name, word, x, y, size, color, font, rotation) 
-                VALUES(:mindWordCreator, :mindWord, :mindWordXCord, :mindWordYCord, :mindWordSize, :mindWordColor, :mindWordFont, :mindWordSpin)';
+                    'INSERT INTO mind_map (name, word, x, y, style, size, font, rotation) 
+                VALUES(:mindWordCreator, :mindWord, :mindWordXCord, :mindWordYCord,:mindWordStyle, :mindWordSize, :mindWordFont, :mindWordSpin)';
                 $add_word_stmt = $this->dbh->prepare($sql_add_words);
                 $add_word_stmt->bindParam(':mindWordCreator', $try_mind_word_creator);
                 $add_word_stmt->bindParam(':mindWord', $try_mind_word);
                 $add_word_stmt->bindParam(':mindWordXCord', $try_mind_word_x_cord);
                 $add_word_stmt->bindParam(':mindWordYCord', $try_mind_word_y_cord);
+                $add_word_stmt->bindParam(':mindWordStyle', $try_mind_word_style);
                 $add_word_stmt->bindParam(':mindWordSize', $try_mind_word_size);
-                $add_word_stmt->bindParam(':mindWordColor', $try_mind_word_color);
                 $add_word_stmt->bindParam(':mindWordFont', $try_mind_word_font);
                 $add_word_stmt->bindParam(':mindWordSpin', $try_mind_word_spin);
                 $add_word_stmt->execute();

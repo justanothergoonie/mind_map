@@ -1,19 +1,22 @@
 let newWord = document.querySelector('.make-a-word');
 let controls = document.querySelector('.controls');
 let createWord = document.querySelector('.save-word');
+let styleBtn = document.querySelector('.styles-button');
+let styleOpts = document.querySelector('.styles');
 
 let toggleControlsOn = function () {
 	newWord.classList.toggle('hidden');
 	controls.classList.toggle('showing');
 	createWord.classList.toggle('showing');
 };
-let toggleControlsOff = function () {
-	newWord.classList.toggle('showing');
-	controls.classList.toggle('hidden');
-	createWord.classList.toggle('hidden');
-};
 
 newWord.addEventListener('click', toggleControlsOn);
+
+let toggleStyles = function () {
+	styleOpts.classList.toggle('showing');
+};
+
+styleBtn.addEventListener('click', toggleStyles);
 
 let mindMapContainer = document.querySelector('.mind-map-container');
 let theXCord = document.querySelector('.the-x-cord');
@@ -34,4 +37,3 @@ let whereTheWordGo = function () {
 };
 mindMapContainer.addEventListener('click', whereTheWordGo);
 createWord.addEventListener('click', whereTheWordGo);
-createWord.addEventListener('click', toggleControlsOff);
