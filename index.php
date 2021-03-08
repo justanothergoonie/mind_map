@@ -140,6 +140,7 @@ $words = $wordManager->get_mind_words();
         </div>
         <input class="save-word" type="submit" value="Create Word">
     </form>
+    <script src="dist/js/utils.js"></script>
     <script src="dist/js/main.js"></script>
     <script src="dist/js/drag-to-scroll.js"></script>
     <script src="dist/js/toggle.js"></script>
