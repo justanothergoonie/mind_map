@@ -43,7 +43,6 @@ class mindWord
         try {
             $try_mind_word_creator = $vars['the_name'];
             $try_mind_word = $vars['the_word'];
-            // $try_mind_word_color = $vars['the_color'];
             $try_mind_word_font = $vars['the_font'];
             $try_mind_word_x_cord = $vars['the_x_cord'];
             $try_mind_word_y_cord = $vars['the_y_cord'];
