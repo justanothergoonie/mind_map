@@ -1,11 +1,9 @@
 console.log(`mind map yo`);
 
-document.querySelector('.pseudo-word-input').addEventListener('click', function () {
-	this.select();
-});
-document.querySelector('.pseudo-name-input').addEventListener('click', function () {
-	this.select();
-});
+// scroll to the center of the mind map
+document
+	.querySelector('.mind-map-container')
+	.scrollTo(5000 - window.innerWidth / 2, 5000 - window.innerHeight / 2);
 
 let values = document.querySelectorAll('.style-buttons');
 let valuesAr = [];

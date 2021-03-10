@@ -4,6 +4,7 @@
 	height: 100vh;
 	// border: 2px solid greenyellow;
 	overflow: scroll;
+	background-image: url(../../dist/img/graph.jpeg);
 	.make-a-word {
 		background-image: url(../../dist/img/newWordIcon.png);
 		background-repeat: no-repeat;
@@ -87,15 +88,20 @@
 		}
 	}
 }
-
 .controls {
 	display: none;
 	.save-word {
-		@include bp-med {
-			margin-top: 5%;
-			font-size: 2rem;
-			display: none;
-		}
+		background-image: url(../../dist/img/submitIcon.png);
+		background-repeat: no-repeat;
+		background-position: center;
+		color: transparent;
+		margin: 2% auto;
+		font-size: 4rem;
+		display: none;
+		border: none;
+		background-color: transparent;
+		width: 30%;
+
 		&.showing {
 			display: block;
 		}
@@ -103,29 +109,26 @@
 			display: none;
 		}
 	}
-	.pseudo-input {
-		position: fixed;
-		right: 50%;
-		top: 50%;
-		width: 70%;
-		height: 10%;
-		transform: translateX(50%);
+	.input {
 		font-size: 1rem;
 		display: flex;
 		flex-direction: column;
 		justify-content: space-evenly;
 		align-content: center;
-		text-align: center;
+		.word-input {
+			border: black 2px solid;
+			background-color: beige;
+			padding: 2%;
+		}
+		.name-input {
+			border: black 2px solid;
+			background-color: beige;
+			padding: 2%;
+		}
 		@include bp-med {
 			font-size: 1.5rem;
 			width: revert;
 			height: 7%;
-		}
-		span {
-			display: flex;
-			align-items: center;
-			height: 50%;
-			justify-content: center;
 		}
 	}
 	div {
@@ -143,12 +146,30 @@
 				font-size: 1.2rem;
 			}
 		}
-		.spin-range {
+
+		&.big-spin {
 			display: flex;
 			flex-direction: row;
-			justify-content: space-between;
-			input {
-				width: 75%;
+			width: 100%;
+			.size {
+				width: 50%;
+				display: flex;
+				flex-direction: row;
+				.size-icon {
+					width: 20%;
+				}
+				select {
+					width: 80%;
+				}
+			}
+			.spin-range {
+				width: 50%;
+				display: flex;
+				flex-direction: row;
+				justify-content: space-between;
+				input {
+					width: 75%;
+				}
 			}
 		}
 		&.hidden {
@@ -156,18 +177,13 @@
 		}
 		&.styles-container {
 			display: flex;
-			flex-direction: row-reverse;
-			position: relative;
+			flex-direction: row;
 			.styles {
-				transition: all 0.3s ease;
 				display: flex;
 				flex-direction: row;
-				opacity: 0;
-				position: absolute;
-				left: 150%;
-				height: 100%;
 				input {
-					width: 16%;
+					width: 25%;
+					height: 100%;
 					padding: 0;
 				}
 				.style-1 {
@@ -175,7 +191,6 @@
 					background-repeat: no-repeat;
 					background-color: transparent;
 					background-position: center;
-
 					border: none;
 					color: transparent;
 				}
@@ -184,7 +199,6 @@
 					background-repeat: no-repeat;
 					background-color: transparent;
 					background-position: center;
-
 					border: none;
 					color: transparent;
 				}
@@ -205,32 +219,6 @@
 
 					border: none;
 					color: transparent;
-				}
-				.style-5 {
-					background-image: url(../../dist/img/Style5.png);
-					background-repeat: no-repeat;
-					background-color: transparent;
-					background-position: center;
-
-					border: none;
-					color: transparent;
-				}
-				.style-6 {
-					background-image: url(../../dist/img/Style6.png);
-					background-repeat: no-repeat;
-					background-color: transparent;
-					background-position: center;
-
-					border: none;
-					color: transparent;
-				}
-
-				&.showing {
-					display: flex;
-					flex-direction: row;
-					opacity: 1;
-					transition: all 0.5s ease;
-					left: -75%;
 				}
 			}
 		}
@@ -258,8 +246,27 @@
 	&.hidden {
 		display: none;
 	}
-}
 
+	.plus-minus-field {
+		// wrapper around the size field and its associated plus and minus buttons
+		position: relative;
+		input {
+			padding: 5px;
+			min-width: 100px;
+		}
+		.plus,
+		.minus {
+			position: absolute;
+			right: 0;
+		}
+		.plus {
+			top: 0;
+		}
+		.minus {
+			bottom: 0;
+		}
+	}
+}
 .hidden {
 	display: none;
 }

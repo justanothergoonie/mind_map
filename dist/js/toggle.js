@@ -24,8 +24,10 @@ var theXCord = document.querySelector('.the-x-cord');
 var theYCord = document.querySelector('.the-y-cord');
 var theWord = document.querySelector('.your-word');
 var theName = document.querySelector('.your-name');
-var pseudoWordInput = document.querySelector('.pseudo-word-input');
-var pseudoNameInput = document.querySelector('.pseudo-name-input');
+var pseudoWordInput = document.querySelector('.word-input');
+var pseudoNameInput = document.querySelector('.name-input');
+var theSize = document.querySelector('.the-size');
+var theSpin = document.querySelector('.the-spin');
 
 var whereTheWordGo = function whereTheWordGo() {
   var xPos = mindMapContainer.scrollLeft + window.innerWidth / 2 + 0.5;
@@ -33,8 +35,9 @@ var whereTheWordGo = function whereTheWordGo() {
   theXCord.value = xPos;
   theYCord.value = yPos;
   theWord.value = pseudoWordInput.innerText;
+  console.log(theWord.value);
   theName.value = pseudoNameInput.innerText;
-  console.log(theXCord.value, theYCord.value, theWord.value, theName.value);
+  console.log(theXCord.value, theYCord.value, theWord.value, theName.value, theSize.value, theSpin.value);
 };
 
 mindMapContainer.addEventListener('click', whereTheWordGo);

@@ -42,7 +42,7 @@ $words = $wordManager->get_mind_words();
                 left:<?php echo $word['x']; ?>px; 
                 top:<?php echo $word['y']; ?>px; 
                
-                font-family:<?php echo $word['font']; ?>; 
+                font-family: Billy; 
                  
                 transform:rotate(<?php echo $word['rotation']; ?>deg); 
                 ">
@@ -65,57 +65,61 @@ $words = $wordManager->get_mind_words();
         </div>
     </div>
 
-
-
     <form class="controls" method="post">
         <input type="hidden" name="_action" value="create_mind_word">
-        <div class="pseudo-input">
-            <span class="pseudo-word-input" contenteditable="true" onclick="this.select();">
-                Add your word here, scroll to place
-            </span>
-            <span class="pseudo-name-input" contenteditable="true" onclick="this.select();">
-                Your Name
-            </span>
-        </div>
         <div class="hidden">
-            <input class="your-name" type="text" name="the_name" value="">
             <input class="your-word" type="text" name="the_word" value="">
-            <div class="location-location-location">
-                <h2>Where You Want It?</h2>
-                <div class="x-location">
-                    <label>X-Coordinate 1-10,000</label>
-                    <input type="text" name="the_x_cord" class="the-x-cord">
-                </div>
-                <div class="y-location">
-                    <label>Y-Coordinate 1-10,000</label>
-                    <input type="text" name="the_y_cord" class="the-y-cord">
-                </div>
-            </div>
+            <input class="your-name" type="text" name="the_name" value="">
+            <input type="text" name="the_x_cord" class="the-x-cord">
+            <input type="text" name="the_y_cord" class="the-y-cord">
             <input type="hidden" name="the_style" value="" class="the-true-style">
-        </div>
-        <div class="font-size">
-            <label>How Big You Want It?</label>
-            <select name="the_size" id="">
-                <option value="2">12pt</option>
-                <option value="2.4">16pt</option>
-                <option value="2.8">20pt</option>
-                <option value="3.2">24pt</option>
-                <option value="5">42pt</option>
-            </select>
-        </div>
 
-        <div class="spin-me-right-round">
-            <h2>Put Some Spin On It</h2>
-            <div class="spin-range">
-                <label>0<sup>&#176</sup>-359<sup>&#176</sup> </label>
-                <input type="text" name="the_spin" value="0">
+        </div>
+        <div class="input">
+            <div class="word-container">
+                <div class="word-icon">
+
+                </div>
+                <span class="word-input" contenteditable="true">
+                    WORD
+                </span>
+            </div>
+            <div class="name-container">
+                <div class="name-icon">
+
+                </div>
+                <span class="name-input" contenteditable="true">
+                    Your Name
+                </span>
             </div>
 
         </div>
+        <div class="big-spin">
+            <div class="size">
 
-        <!-- <div class="picker-btn">
+                <div class="size-icon plus-minus-field" data-step=16 data-min=16 data-default=16 data-max=56>
+                    <!-- <input type="hidden"  value="" class="the-true-size"> -->
+                    <input type="number" name="the_size" class="the-size">
+                    <button class="plus">+</button>
+                    <button class="minus">-</button>
+                </div>
 
-        </div> -->
+
+
+            </div>
+            <div class="spin-range">
+                <div class="spin-title">
+                    <div class="spin-icon">
+                    </div>
+                </div>
+                <div class="spin-icon plus-minus-field" data-step=5 data-min=-90 data-default=0 data-max=90>
+                    <input name="the_spin" type="number" class="the-spin">
+                    <button class="plus">+</button>
+                    <button class="minus">-</button>
+                </div>
+            </div>
+        </div>
+
         <div class="styles-container">
             <div class="styles-button">
                 <img src="dist/img/StyleIcon.png" alt="">
@@ -125,27 +129,18 @@ $words = $wordManager->get_mind_words();
                 <input type="button" class="style-2 style-buttons" value="green-TB">
                 <input type="button" class="style-3 style-buttons" value="blue-TB">
                 <input type="button" class="style-4 style-buttons" value="red-bkg">
-                <input type="button" class="style-5 style-buttons" value="green-bkg">
-                <input type="button" class="style-6 style-buttons" value="blue-bkg">
             </div>
-
         </div>
 
-        <div class="font">
-            <label>Style</label>
-            <select name="the_font">
-                <option value="Billy">Billy</option>
-                <option value="netsrak">Netsrak</option>
-            </select>
-        </div>
-        <input class="save-word" type="submit" value="Create Word">
+
+        <input class="save-word" type="submit">
     </form>
     <script src="dist/js/utils.js"></script>
     <script src="dist/js/main.js"></script>
     <script src="dist/js/drag-to-scroll.js"></script>
     <script src="dist/js/toggle.js"></script>
     <script src="dist/js/color-picker.min.js"></script>
-    <script src="dist/js/picker.js"></script>
+    <script src="dist/js/plusMinus.js"></script>
 
 </body>
 
