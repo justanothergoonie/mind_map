@@ -4,23 +4,41 @@
 	height: 100vh;
 	// border: 2px solid greenyellow;
 	overflow: scroll;
-	background-image: url(../../dist/img/graph.jpeg);
+	background-image: url(../../dist/img/background.svg);
 	.make-a-word {
-		background-image: url(../../dist/img/newWordIcon.png);
-		background-repeat: no-repeat;
+		// background-image: url(../../dist/img/newWordIcon.png);
+		// background-repeat: no-repeat;
 		background-color: transparent;
-		background-size: cover;
+		// background-size: cover;
+		display: flex;
+		justify-content: center;
 		border: none;
 		width: 5rem;
 		height: 5rem;
 		position: fixed;
-
 		right: 50%;
-		// margin-top: 5%;
 		top: 50%;
 		font-size: 2rem;
 		transform: translate(50%, -50%);
 		z-index: 5;
+		.long-cross {
+			width: 5%;
+			height: 100%;
+			z-index: 6;
+			left: 50%;
+			position: absolute;
+			transform: translateX(-50%);
+			background-color: black;
+		}
+		.lat-cross {
+			height: 5%;
+			width: 100%;
+			z-index: 7;
+			position: absolute;
+			top: 50%;
+			background-color: black;
+			transform: translateY(-50%);
+		}
 		&.showing {
 			display: block;
 		}
@@ -37,35 +55,25 @@
 		.word {
 			padding: 5px;
 			position: absolute;
-			&.red-TB {
-				color: #d41c10;
-				border: 3px solid #d41c10;
-				background-color: #ecf1c4;
+			&.pb-pitb {
+				color: #ff5e5a;
+				border: 3px solid #ff5e5a;
+				background-color: #4e0552;
 			}
-			&.green-TB {
-				color: #60961d;
-				border: 3px solid #60961d;
-				background-color: #ecf1c4;
+			&.gb-ytb {
+				color: #007451;
+				border: 3px solid #007451;
+				background-color: #ffed00;
 			}
-			&.blue-TB {
-				color: #32a0e2;
-				border: 3px solid #32a0e2;
-				background-color: #ecf1c4;
+			&.bb-ptb {
+				color: #004789;
+				border: 3px solid #004789;
+				background-color: #dab3d0;
 			}
-			&.red-bkg {
-				color: #ecf1c4;
-				border: 3px solid #010d0d;
-				background-color: #d41c10;
-			}
-			&.green-bkg {
-				color: #ecf1c4;
-				border: 3px solid #010d0d;
-				background-color: #60961d;
-			}
-			&.blue-bkg {
-				color: #ecf1c4;
-				border: 3px solid #010d0d;
-				background-color: #32a0e2;
+			&.ob-lotb {
+				color: #ffa237;
+				border: 3px solid #ffa237;
+				background-color: #ff5e36;
 			}
 		}
 
@@ -110,161 +118,255 @@
 		}
 	}
 	.input {
-		font-size: 1rem;
+		font-size: 3rem;
 		display: flex;
 		flex-direction: column;
 		justify-content: space-evenly;
 		align-content: center;
-		.word-input {
-			border: black 2px solid;
-			background-color: beige;
-			padding: 2%;
+		height: 25%;
+		margin: 1%;
+		.word-container {
+			display: flex;
+			justify-content: space-between;
+			.word-icon {
+				width: 25%;
+				display: flex;
+				justify-content: center;
+				img {
+					width: 50%;
+				}
+			}
+			.word-input {
+				border: black 2px solid;
+				background-color: beige;
+				// padding: 2%;
+				width: 75%;
+				align-self: center;
+				padding: 10px;
+			}
 		}
-		.name-input {
-			border: black 2px solid;
-			background-color: beige;
-			padding: 2%;
-		}
-		@include bp-med {
-			font-size: 1.5rem;
-			width: revert;
-			height: 7%;
+		.name-container {
+			display: flex;
+			justify-content: space-between;
+			.name-icon {
+				width: 25%;
+				display: flex;
+				justify-content: center;
+				img {
+					width: 55%;
+				}
+			}
+			.name-input {
+				border: black 2px solid;
+				background-color: beige;
+				// padding: 2%;
+				align-self: center;
+				width: 75%;
+				padding: 10px;
+			}
 		}
 	}
-	div {
+	.big-spin {
+		height: 25%;
+		width: 100%;
+		margin: 1% 0% 2% 0%;
 		display: flex;
-		flex-direction: column;
-		align-content: center;
-		h2,
-		label {
-			font-size: 1.3rem;
-			margin-bottom: 0.5rem;
-			color: white;
-		}
-		select {
-			@include bp-med {
-				font-size: 1.2rem;
+
+		justify-content: space-around;
+		.size {
+			align-self: center;
+			height: 50%;
+			width: 40%;
+			.size-icon {
+				height: 100%;
+				align-self: center;
+				&.plus-minus-field {
+					// wrapper around the size field and its associated plus and minus buttons
+					// position: relative;
+					display: flex;
+					flex-direction: row-reverse;
+					justify-content: flex-end;
+					input {
+						// padding: 5px;
+						// height: 100%;
+						width: 30%;
+						// align-self: center;
+						text-align: center;
+						font-size: 2rem;
+					}
+					.button-holder {
+						width: 20%;
+						display: flex;
+						flex-direction: column;
+						justify-content: space-around;
+						.plus,
+						.minus {
+							// position: absolute;
+							// right: 0;
+							// width: 35%;
+						}
+						.plus {
+							background-color: transparent;
+							border: none;
+							padding: 0;
+						}
+						.minus {
+							background-color: transparent;
+							border: none;
+							padding: 0;
+							img {
+								display: flex;
+							}
+						}
+					}
+					.size-title {
+						margin: auto;
+						width: 50%;
+						display: flex;
+						justify-content: center;
+						img {
+							width: 50%;
+						}
+					}
+				}
 			}
 		}
+		.spin-range {
+			align-self: center;
+			height: 50%;
+			width: 40%;
+			input {
+				width: 75%;
+			}
+			.spin-icon {
+				height: 100%;
+				align-self: center;
+				&.plus-minus-field {
+					// wrapper around the size field and its associated plus and minus buttons
+					// position: relative;
+					display: flex;
+					flex-direction: row-reverse;
+					justify-content: flex-end;
+					input {
+						// padding: 5px;
+						// height: 100%;
+						width: 30%;
+						// align-self: center;
+						text-align: center;
+						font-size: 2rem;
+					}
+					.button-holder {
+						width: 20%;
+						display: flex;
+						flex-direction: column;
+						justify-content: space-around;
+						.plus,
+						.minus {
+							// position: absolute;
+							// right: 0;
+							// width: 35%;
+						}
+						.plus {
+							background-color: transparent;
+							border: none;
+							padding: 0;
+						}
+						.minus {
+							background-color: transparent;
+							border: none;
+							padding: 0;
+							img {
+								display: flex;
+							}
+						}
+					}
+					.spin-title {
+						margin: auto;
+						width: 50%;
+						display: flex;
+						justify-content: center;
+						img {
+							width: 50%;
+						}
+					}
+				}
+			}
+		}
+	}
 
-		&.big-spin {
+	.styles-container {
+		display: flex;
+		flex-direction: row;
+		width: 100%;
+		margin: 1%;
+		justify-content: space-around;
+		.styles-icon {
+			width: 25%;
+			display: flex;
+			justify-content: center;
+			img {
+				width: 55%;
+			}
+		}
+		.styles {
 			display: flex;
 			flex-direction: row;
-			width: 100%;
-			.size {
-				width: 50%;
-				display: flex;
-				flex-direction: row;
-				.size-icon {
-					width: 20%;
-				}
-				select {
-					width: 80%;
-				}
+			width: 75%;
+			justify-content: space-between;
+			input {
+				width: 25%;
+				height: 100%;
+				padding: 0;
 			}
-			.spin-range {
-				width: 50%;
-				display: flex;
-				flex-direction: row;
-				justify-content: space-between;
-				input {
-					width: 75%;
-				}
+			.style-1 {
+				background-image: url(../../dist/img/Style1.svg);
+				background-repeat: no-repeat;
+				background-color: transparent;
+				// background-position: center;
+				border: none;
+				color: transparent;
 			}
-		}
-		&.hidden {
-			display: none;
-		}
-		&.styles-container {
-			display: flex;
-			flex-direction: row;
-			.styles {
-				display: flex;
-				flex-direction: row;
-				input {
-					width: 25%;
-					height: 100%;
-					padding: 0;
-				}
-				.style-1 {
-					background-image: url(../../dist/img/Style1.png);
-					background-repeat: no-repeat;
-					background-color: transparent;
-					background-position: center;
-					border: none;
-					color: transparent;
-				}
-				.style-2 {
-					background-image: url(../../dist/img/Style2.png);
-					background-repeat: no-repeat;
-					background-color: transparent;
-					background-position: center;
-					border: none;
-					color: transparent;
-				}
-				.style-3 {
-					background-image: url(../../dist/img/Style3.png);
-					background-repeat: no-repeat;
-					background-color: transparent;
-					background-position: center;
-
-					border: none;
-					color: transparent;
-				}
-				.style-4 {
-					background-image: url(../../dist/img/Style4.png);
-					background-repeat: no-repeat;
-					background-color: transparent;
-					background-position: center;
-
-					border: none;
-					color: transparent;
-				}
+			.style-2 {
+				background-image: url(../../dist/img/Style2.svg);
+				background-repeat: no-repeat;
+				background-color: transparent;
+				// background-position: center;
+				border: none;
+				color: transparent;
+			}
+			.style-3 {
+				background-image: url(../../dist/img/Style3.svg);
+				background-repeat: no-repeat;
+				background-color: transparent;
+				// background-position: center;
+				border: none;
+				color: transparent;
+			}
+			.style-4 {
+				background-image: url(../../dist/img/Style4.svg);
+				background-repeat: no-repeat;
+				background-color: transparent;
+				// background-position: center;
+				border: none;
+				color: transparent;
 			}
 		}
 	}
 	&.showing {
 		position: fixed;
 		top: 0;
-		// right: 0;
 		margin: 1%;
-		padding: 3%;
-		// width: 98%;
-		// height: 48%;
 		display: flex;
 		flex-direction: column;
 		justify-content: space-around;
 		background-color: rgba(0, 0, 20, 0.5);
 		@include bp-med {
-			// width: 25%;
 			right: 0;
-			// height: 40%;
 			margin: 1%;
-			padding: 1%;
 		}
 	}
 	&.hidden {
 		display: none;
-	}
-
-	.plus-minus-field {
-		// wrapper around the size field and its associated plus and minus buttons
-		position: relative;
-		input {
-			padding: 5px;
-			min-width: 100px;
-		}
-		.plus,
-		.minus {
-			position: absolute;
-			right: 0;
-		}
-		.plus {
-			top: 0;
-		}
-		.minus {
-			bottom: 0;
-		}
 	}
 }
 .hidden {

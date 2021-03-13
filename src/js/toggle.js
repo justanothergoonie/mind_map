@@ -16,7 +16,7 @@ let toggleStyles = function () {
 	styleOpts.classList.toggle('showing');
 };
 
-styleBtn.addEventListener('click', toggleStyles);
+// styleBtn.addEventListener('click', toggleStyles);
 
 let mindMapContainer = document.querySelector('.mind-map-container');
 let theXCord = document.querySelector('.the-x-cord');
@@ -36,14 +36,6 @@ let whereTheWordGo = function () {
 	theWord.value = pseudoWordInput.innerText;
 	console.log(theWord.value);
 	theName.value = pseudoNameInput.innerText;
-	console.log(
-		theXCord.value,
-		theYCord.value,
-		theWord.value,
-		theName.value,
-		theSize.value,
-		theSpin.value
-	);
 };
 mindMapContainer.addEventListener('click', whereTheWordGo);
 createWord.addEventListener('click', whereTheWordGo);

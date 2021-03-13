@@ -16,9 +16,9 @@ newWord.addEventListener('click', toggleControlsOn);
 
 var toggleStyles = function toggleStyles() {
   styleOpts.classList.toggle('showing');
-};
+}; // styleBtn.addEventListener('click', toggleStyles);
 
-styleBtn.addEventListener('click', toggleStyles);
+
 var mindMapContainer = document.querySelector('.mind-map-container');
 var theXCord = document.querySelector('.the-x-cord');
 var theYCord = document.querySelector('.the-y-cord');
@@ -37,7 +37,6 @@ var whereTheWordGo = function whereTheWordGo() {
   theWord.value = pseudoWordInput.innerText;
   console.log(theWord.value);
   theName.value = pseudoNameInput.innerText;
-  console.log(theXCord.value, theYCord.value, theWord.value, theName.value, theSize.value, theSpin.value);
 };
 
 mindMapContainer.addEventListener('click', whereTheWordGo);

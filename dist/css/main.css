@@ -151,14 +151,13 @@ body {
 	width: 100vw;
 	height: 100vh;
 	overflow: scroll;
-	background-image: url(../../dist/img/graph.jpeg);
+	background-image: url(../../dist/img/background.svg);
 }
 
 .mind-map-container .make-a-word {
-	background-image: url(../../dist/img/newWordIcon.png);
-	background-repeat: no-repeat;
 	background-color: transparent;
-	background-size: cover;
+	display: flex;
+	justify-content: center;
 	border: none;
 	width: 5rem;
 	height: 5rem;
@@ -169,6 +168,28 @@ body {
 	-ms-transform: translate(50%, -50%);
 	    transform: translate(50%, -50%);
 	z-index: 5;
+}
+
+.mind-map-container .make-a-word .long-cross {
+	width: 5%;
+	height: 100%;
+	z-index: 6;
+	left: 50%;
+	position: absolute;
+	-ms-transform: translateX(-50%);
+	    transform: translateX(-50%);
+	background-color: black;
+}
+
+.mind-map-container .make-a-word .lat-cross {
+	height: 5%;
+	width: 100%;
+	z-index: 7;
+	position: absolute;
+	top: 50%;
+	background-color: black;
+	-ms-transform: translateY(-50%);
+	    transform: translateY(-50%);
 }
 
 .mind-map-container .make-a-word.showing {
@@ -190,40 +211,28 @@ body {
 	position: absolute;
 }
 
-.mind-map-container .mind-map .word.red-TB {
-	color: #d41c10;
-	border: 3px solid #d41c10;
-	background-color: #ecf1c4;
+.mind-map-container .mind-map .word.pb-pitb {
+	color: #ff5e5a;
+	border: 3px solid #ff5e5a;
+	background-color: #4e0552;
 }
 
-.mind-map-container .mind-map .word.green-TB {
-	color: #60961d;
-	border: 3px solid #60961d;
-	background-color: #ecf1c4;
+.mind-map-container .mind-map .word.gb-ytb {
+	color: #007451;
+	border: 3px solid #007451;
+	background-color: #ffed00;
 }
 
-.mind-map-container .mind-map .word.blue-TB {
-	color: #32a0e2;
-	border: 3px solid #32a0e2;
-	background-color: #ecf1c4;
+.mind-map-container .mind-map .word.bb-ptb {
+	color: #004789;
+	border: 3px solid #004789;
+	background-color: #dab3d0;
 }
 
-.mind-map-container .mind-map .word.red-bkg {
-	color: #ecf1c4;
-	border: 3px solid #010d0d;
-	background-color: #d41c10;
-}
-
-.mind-map-container .mind-map .word.green-bkg {
-	color: #ecf1c4;
-	border: 3px solid #010d0d;
-	background-color: #60961d;
-}
-
-.mind-map-container .mind-map .word.blue-bkg {
-	color: #ecf1c4;
-	border: 3px solid #010d0d;
-	background-color: #32a0e2;
+.mind-map-container .mind-map .word.ob-lotb {
+	color: #ffa237;
+	border: 3px solid #ffa237;
+	background-color: #ff5e36;
 }
 
 .mind-map-container .mind-map .debug {
@@ -268,135 +277,246 @@ body {
 }
 
 .controls .input {
-	font-size: 1rem;
+	font-size: 3rem;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-evenly;
 	align-content: center;
+	height: 25%;
+	margin: 1%;
 }
 
-.controls .input .word-input {
-	border: black 2px solid;
-	background-color: beige;
-	padding: 2%;
-}
-
-.controls .input .name-input {
-	border: black 2px solid;
-	background-color: beige;
-	padding: 2%;
-}
-
-@media screen and (min-width: 768px) {
-	.controls .input {
-		font-size: 1.5rem;
-		width: revert;
-		height: 7%;
-	}
-}
-
-.controls div {
+.controls .input .word-container {
 	display: flex;
-	flex-direction: column;
-	align-content: center;
-}
-
-.controls div h2,
-.controls div label {
-	font-size: 1.3rem;
-	margin-bottom: 0.5rem;
-	color: white;
-}
-
-@media screen and (min-width: 768px) {
-	.controls div select {
-		font-size: 1.2rem;
-	}
-}
-
-.controls div.big-spin {
-	display: flex;
-	flex-direction: row;
-	width: 100%;
-}
-
-.controls div.big-spin .size {
-	width: 50%;
-	display: flex;
-	flex-direction: row;
-}
-
-.controls div.big-spin .size .size-icon {
-	width: 20%;
-}
-
-.controls div.big-spin .size select {
-	width: 80%;
-}
-
-.controls div.big-spin .spin-range {
-	width: 50%;
-	display: flex;
-	flex-direction: row;
 	justify-content: space-between;
 }
 
-.controls div.big-spin .spin-range input {
+.controls .input .word-container .word-icon {
+	width: 25%;
+	display: flex;
+	justify-content: center;
+}
+
+.controls .input .word-container .word-icon img {
+	width: 50%;
+}
+
+.controls .input .word-container .word-input {
+	border: black 2px solid;
+	background-color: beige;
+	width: 75%;
+	align-self: center;
+	padding: 10px;
+}
+
+.controls .input .name-container {
+	display: flex;
+	justify-content: space-between;
+}
+
+.controls .input .name-container .name-icon {
+	width: 25%;
+	display: flex;
+	justify-content: center;
+}
+
+.controls .input .name-container .name-icon img {
+	width: 55%;
+}
+
+.controls .input .name-container .name-input {
+	border: black 2px solid;
+	background-color: beige;
+	align-self: center;
+	width: 75%;
+	padding: 10px;
+}
+
+.controls .big-spin {
+	height: 25%;
+	width: 100%;
+	margin: 1% 0% 2% 0%;
+	display: flex;
+	justify-content: space-around;
+}
+
+.controls .big-spin .size {
+	align-self: center;
+	height: 50%;
+	width: 40%;
+}
+
+.controls .big-spin .size .size-icon {
+	height: 100%;
+	align-self: center;
+}
+
+.controls .big-spin .size .size-icon.plus-minus-field {
+	display: flex;
+	flex-direction: row-reverse;
+	justify-content: flex-end;
+}
+
+.controls .big-spin .size .size-icon.plus-minus-field input {
+	width: 30%;
+	text-align: center;
+	font-size: 2rem;
+}
+
+.controls .big-spin .size .size-icon.plus-minus-field .button-holder {
+	width: 20%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+}
+
+.controls .big-spin .size .size-icon.plus-minus-field .button-holder .plus {
+	background-color: transparent;
+	border: none;
+	padding: 0;
+}
+
+.controls .big-spin .size .size-icon.plus-minus-field .button-holder .minus {
+	background-color: transparent;
+	border: none;
+	padding: 0;
+}
+
+.controls .big-spin .size .size-icon.plus-minus-field .button-holder .minus img {
+	display: flex;
+}
+
+.controls .big-spin .size .size-icon.plus-minus-field .size-title {
+	margin: auto;
+	width: 50%;
+	display: flex;
+	justify-content: center;
+}
+
+.controls .big-spin .size .size-icon.plus-minus-field .size-title img {
+	width: 50%;
+}
+
+.controls .big-spin .spin-range {
+	align-self: center;
+	height: 50%;
+	width: 40%;
+}
+
+.controls .big-spin .spin-range input {
 	width: 75%;
 }
 
-.controls div.hidden {
-	display: none;
+.controls .big-spin .spin-range .spin-icon {
+	height: 100%;
+	align-self: center;
 }
 
-.controls div.styles-container {
+.controls .big-spin .spin-range .spin-icon.plus-minus-field {
+	display: flex;
+	flex-direction: row-reverse;
+	justify-content: flex-end;
+}
+
+.controls .big-spin .spin-range .spin-icon.plus-minus-field input {
+	width: 30%;
+	text-align: center;
+	font-size: 2rem;
+}
+
+.controls .big-spin .spin-range .spin-icon.plus-minus-field .button-holder {
+	width: 20%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+}
+
+.controls .big-spin .spin-range .spin-icon.plus-minus-field .button-holder .plus {
+	background-color: transparent;
+	border: none;
+	padding: 0;
+}
+
+.controls .big-spin .spin-range .spin-icon.plus-minus-field .button-holder .minus {
+	background-color: transparent;
+	border: none;
+	padding: 0;
+}
+
+.controls .big-spin .spin-range .spin-icon.plus-minus-field .button-holder .minus img {
+	display: flex;
+}
+
+.controls .big-spin .spin-range .spin-icon.plus-minus-field .spin-title {
+	margin: auto;
+	width: 50%;
+	display: flex;
+	justify-content: center;
+}
+
+.controls .big-spin .spin-range .spin-icon.plus-minus-field .spin-title img {
+	width: 50%;
+}
+
+.controls .styles-container {
 	display: flex;
 	flex-direction: row;
+	width: 100%;
+	margin: 1%;
+	justify-content: space-around;
 }
 
-.controls div.styles-container .styles {
+.controls .styles-container .styles-icon {
+	width: 25%;
+	display: flex;
+	justify-content: center;
+}
+
+.controls .styles-container .styles-icon img {
+	width: 55%;
+}
+
+.controls .styles-container .styles {
 	display: flex;
 	flex-direction: row;
+	width: 75%;
+	justify-content: space-between;
 }
 
-.controls div.styles-container .styles input {
+.controls .styles-container .styles input {
 	width: 25%;
 	height: 100%;
 	padding: 0;
 }
 
-.controls div.styles-container .styles .style-1 {
-	background-image: url(../../dist/img/Style1.png);
+.controls .styles-container .styles .style-1 {
+	background-image: url(../../dist/img/Style1.svg);
 	background-repeat: no-repeat;
 	background-color: transparent;
-	background-position: center;
 	border: none;
 	color: transparent;
 }
 
-.controls div.styles-container .styles .style-2 {
-	background-image: url(../../dist/img/Style2.png);
+.controls .styles-container .styles .style-2 {
+	background-image: url(../../dist/img/Style2.svg);
 	background-repeat: no-repeat;
 	background-color: transparent;
-	background-position: center;
 	border: none;
 	color: transparent;
 }
 
-.controls div.styles-container .styles .style-3 {
-	background-image: url(../../dist/img/Style3.png);
+.controls .styles-container .styles .style-3 {
+	background-image: url(../../dist/img/Style3.svg);
 	background-repeat: no-repeat;
 	background-color: transparent;
-	background-position: center;
 	border: none;
 	color: transparent;
 }
 
-.controls div.styles-container .styles .style-4 {
-	background-image: url(../../dist/img/Style4.png);
+.controls .styles-container .styles .style-4 {
+	background-image: url(../../dist/img/Style4.svg);
 	background-repeat: no-repeat;
 	background-color: transparent;
-	background-position: center;
 	border: none;
 	color: transparent;
 }
@@ -405,7 +525,6 @@ body {
 	position: fixed;
 	top: 0;
 	margin: 1%;
-	padding: 3%;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-around;
@@ -416,35 +535,11 @@ body {
 	.controls.showing {
 		right: 0;
 		margin: 1%;
-		padding: 1%;
 	}
 }
 
 .controls.hidden {
 	display: none;
-}
-
-.controls .plus-minus-field {
-	position: relative;
-}
-
-.controls .plus-minus-field input {
-	padding: 5px;
-	min-width: 100px;
-}
-
-.controls .plus-minus-field .plus,
-.controls .plus-minus-field .minus {
-	position: absolute;
-	right: 0;
-}
-
-.controls .plus-minus-field .plus {
-	top: 0;
-}
-
-.controls .plus-minus-field .minus {
-	bottom: 0;
 }
 
 .hidden {
