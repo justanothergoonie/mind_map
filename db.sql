@@ -1,47 +1,9 @@
-←
-phpMyAdmin
-HomeEmpty session dataphpMyAdmin documentationDocumentationNavigation panel settingsReload navigation panel
-RecentFavorites
-Collapse allUnlink from main panel
-New
-Expand/CollapseDatabase operationsDnDatabase
-Expand/CollapseDatabase operationsexample
-Expand/CollapseDatabase operationsgallery
-Expand/CollapseDatabase operationsinformation_schema
-Database operationsmind_map
-NewNew
-Expand/CollapseStructuremind_map
-Expand/CollapseDatabase operationsmysql
-Expand/CollapseDatabase operationsperformance_schema
-Expand/CollapseDatabase operationssys
-Server: localhost:8889 »Database: mind_map »Table: mind_map
-Browse Browse
-Structure Structure
-SQL SQL
-Search Search
-Insert Insert
-Export Export
-More
-Click on the bar to scroll to top of page
-SQL Query Console Console
-ascendingdescendingOrder:Debug SQLExecution orderTime takenOrder by:Group queries
-Some error occurred while getting SQL debug info.
-OptionsSet default
-Always expand query messages
-Show query history at start
-Show current browsing query
- Execute queries on Enter and insert new line with Shift + Enter. To make this permanent, view settings.
-Switch to dark theme
-
-[ Back ]
-
-[ Refresh ]
 -- phpMyAdmin SQL Dump
 -- version 4.9.3
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: Mar 10, 2021 at 07:35 PM
+-- Generation Time: Mar 13, 2021 at 09:43 PM
 -- Server version: 5.7.26
 -- PHP Version: 7.4.2
 
@@ -76,36 +38,10 @@ CREATE TABLE `mind_map` (
 --
 
 INSERT INTO `mind_map` (`id`, `name`, `word`, `x`, `y`, `style`, `size`, `rotation`, `created_at`, `deleted_at`) VALUES
-(121, 'ht', 'hello             ', 5000, 4692, NULL, 2, 0, '2021-03-02 17:43:53', NULL),
-(123, 'cody', 'ok', 5397, 4270, NULL, 2, 0, '2021-03-02 20:26:01', NULL),
-(124, 'cody', 'ok', 5397, 4270, NULL, 2, 0, '2021-03-02 20:26:40', NULL),
-(125, 'goofbye', 'hwllo', 5001, 4908, NULL, 2, 0, '2021-03-06 00:33:42', NULL),
-(126, 'goofbye', 'hwllo', 5001, 4908, NULL, 2, 0, '2021-03-06 00:38:33', NULL),
-(127, 'goofbye', 'hwllo', 5001, 4908, NULL, 2, 0, '2021-03-06 00:38:54', NULL),
-(128, 'goofbye', 'hwllo', 5001, 4908, NULL, 2, 0, '2021-03-06 00:39:46', NULL),
-(129, 'goofbye', 'hwllo', 5001, 4908, NULL, 2, 0, '2021-03-06 00:40:16', NULL),
-(130, 'goofbye', 'hwllo', 5001, 4908, NULL, 2, 0, '2021-03-06 00:40:26', NULL),
-(131, 'goofbye', 'hwllo', 5001, 4908, NULL, 2, 0, '2021-03-06 00:40:28', NULL),
-(132, 'goofbye', 'hwllo', 5001, 4908, NULL, 2, 0, '2021-03-06 00:41:02', NULL),
-(133, 'goofbye', 'hwllo', 5001, 4908, NULL, 2, 0, '2021-03-06 00:43:53', NULL),
-(134, 'goofbye', 'hwllo', 5001, 4908, NULL, 2, 0, '2021-03-06 00:48:38', NULL),
-(135, 'goofbye', 'hwllo', 5001, 4908, NULL, 2, 0, '2021-03-06 00:48:43', NULL),
-(136, 'goofbye', 'hwllo', 5001, 4908, NULL, 2, 0, '2021-03-06 00:52:47', NULL),
-(137, 'goofbye', 'hwllo', 5001, 4908, NULL, 2, 0, '2021-03-06 00:55:44', NULL),
-(138, 'fff', 'hel', 5001, 5001, NULL, 2, 0, '2021-03-06 00:56:47', NULL),
-(139, 'fff', 'hel', 5001, 5001, NULL, 2, 0, '2021-03-06 00:57:20', NULL),
-(140, 'fff', 'hel', 5001, 5001, 'red-TB', 2, 0, '2021-03-06 00:58:11', NULL),
-(141, 'fff', 'hel', 5001, 5001, 'red-TB', 2, 0, '2021-03-06 00:58:27', NULL),
-(142, 'fff', 'hel', 5001, 5001, 'red-TB', 2, 0, '2021-03-06 01:01:06', NULL),
-(143, 'fff', 'hel', 5001, 5001, 'red-TB', 2, 0, '2021-03-06 01:01:33', NULL),
-(144, 'world', 'hello', 5196, 4807, 'undefined', 2, 0, '2021-03-06 01:05:40', NULL),
-(145, 'world', 'hello', 5196, 4807, 'undefined', 2, 0, '2021-03-06 01:06:33', NULL),
-(146, 'world', 'hello', 5097, 4766, 'blue-TB', 2, 0, '2021-03-06 01:06:54', NULL),
-(147, 'hello', 'world', 4992, 4840, 'green-bkg', 2, 0, '2021-03-06 01:09:00', NULL),
-(148, 'ye', 'he', 4732, 4808, 'green-TB', 5, 95, '2021-03-06 01:10:23', NULL),
-(149, 'ye', 'he', 4732, 4808, 'green-TB', 5, 95, '2021-03-06 01:12:57', NULL),
-(150, 'ye', 'he', 4732, 4808, 'green-TB', 5, 95, '2021-03-06 01:16:36', NULL),
-(151, 'world', 'hello', 5098, 4765, 'green-TB', 3, 0, '2021-03-10 19:22:41', NULL);
+(177, 'MindMap', 'Hello! Welcome', 5001, 5001, 'pb-pitb', 32, 0, '2021-03-13 21:34:29', NULL),
+(178, 'MindMap', 'Click the Crosshair', 4998, 5101, 'gb-ytb', 32, 0, '2021-03-13 21:37:29', NULL),
+(180, 'MindMap', 'To Circus MindMap', 5001, 5051, 'ob-lotb', 32, 0, '2021-03-13 21:41:51', NULL),
+(181, 'MindMap', 'To add a word', 5001, 5151, 'bb-ptb', 32, 0, '2021-03-13 21:42:42', NULL);
 
 --
 -- Indexes for dumped tables
@@ -125,10 +61,4 @@ ALTER TABLE `mind_map`
 -- AUTO_INCREMENT for table `mind_map`
 --
 ALTER TABLE `mind_map`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=152;
-
-
-[ Back ]
-
-[ Refresh ]
-Open new phpMyAdmin window
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=182;

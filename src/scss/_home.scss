@@ -77,23 +77,23 @@
 			}
 		}
 
-		.debug {
-			position: absolute;
-			width: 5px;
-			height: 5px;
-			border-radius: 5px;
-			font-size: 14pt;
-			background-color: #ccc;
-			color: #ccc;
-			text-indent: 15px;
+		// .debug {
+		// 	position: absolute;
+		// 	width: 5px;
+		// 	height: 5px;
+		// 	border-radius: 5px;
+		// 	font-size: 14pt;
+		// 	background-color: #ccc;
+		// 	color: #ccc;
+		// 	text-indent: 15px;
 
-			display: none;
-		}
-		&.debug {
-			.debug {
-				display: block;
-			}
-		}
+		// 	display: none;
+		// }
+		// &.debug {
+		// 	.debug {
+		// 		display: block;
+		// 	}
+		// }
 	}
 }
 .controls {
@@ -118,13 +118,16 @@
 		}
 	}
 	.input {
-		font-size: 3rem;
+		font-size: 1rem;
 		display: flex;
 		flex-direction: column;
 		justify-content: space-evenly;
 		align-content: center;
 		height: 25%;
 		margin: 1%;
+		@include bp-med {
+			font-size: 3rem;
+		}
 		.word-container {
 			display: flex;
 			justify-content: space-between;
@@ -187,12 +190,12 @@
 					flex-direction: row-reverse;
 					justify-content: flex-end;
 					input {
-						// padding: 5px;
-						// height: 100%;
-						width: 30%;
-						// align-self: center;
+						width: 50%;
 						text-align: center;
 						font-size: 2rem;
+						@include bp-med {
+							width: 30%;
+						}
 					}
 					.button-holder {
 						width: 20%;
@@ -221,9 +224,12 @@
 					}
 					.size-title {
 						margin: auto;
-						width: 50%;
+						width: 30%;
 						display: flex;
 						justify-content: center;
+						@include bp-med {
+							width: 50%;
+						}
 						img {
 							width: 50%;
 						}
@@ -243,29 +249,23 @@
 				align-self: center;
 				&.plus-minus-field {
 					// wrapper around the size field and its associated plus and minus buttons
-					// position: relative;
 					display: flex;
 					flex-direction: row-reverse;
 					justify-content: flex-end;
 					input {
-						// padding: 5px;
-						// height: 100%;
-						width: 30%;
-						// align-self: center;
+						width: 50%;
 						text-align: center;
 						font-size: 2rem;
+						@include bp-med {
+							width: 30%;
+						}
 					}
 					.button-holder {
 						width: 20%;
 						display: flex;
 						flex-direction: column;
 						justify-content: space-around;
-						.plus,
-						.minus {
-							// position: absolute;
-							// right: 0;
-							// width: 35%;
-						}
+
 						.plus {
 							background-color: transparent;
 							border: none;
@@ -282,9 +282,12 @@
 					}
 					.spin-title {
 						margin: auto;
-						width: 50%;
+						width: 30%;
 						display: flex;
 						justify-content: center;
+						@include bp-med {
+							width: 50%;
+						}
 						img {
 							width: 50%;
 						}

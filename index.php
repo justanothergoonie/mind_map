@@ -43,6 +43,7 @@ $words = $wordManager->get_mind_words();
                top:<?php echo $word['y']; ?>px; 
                font-family: Billy; 
                transform:rotate(<?php echo $word['rotation']; ?>deg); 
+                   transform: translate(-50%, -50%);
                ">
                 <p style="font-size:<?php echo $word['size']; ?>px;">
                     <?php echo $word['word']; ?>
@@ -104,7 +105,7 @@ $words = $wordManager->get_mind_words();
                     <!-- </div> -->
 
                     <div class="size-title">
-                        <img src="/dist/img/fontSizeIcon.png" alt="">
+                        <img src="dist/img/fontSizeIcon.png" alt="">
                     </div>
                 </div>
             </div>
@@ -119,7 +120,7 @@ $words = $wordManager->get_mind_words();
                     <!-- </div> -->
 
                     <div class="spin-title">
-                        <img src="/dist/img/rotateIcon.png" alt="">
+                        <img src="dist/img/rotateIcon.png" alt="">
                     </div>
                 </div>
             </div>
