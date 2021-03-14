@@ -63,7 +63,9 @@ document.querySelector('.the-spin').addEventListener('change', function () {
 
 document.querySelectorAll('.style-buttons').forEach(function (btn) {
 	btn.addEventListener('click', function () {
-		let allStyles = Array.from(document.querySelectorAll('.style-buttons')).map(function (s) {
+		let allStyles = Array.from(
+			document.querySelectorAll('.style-buttons')
+		).map(function (s) {
 			return s.value;
 		});
 		let tempWord = document.querySelector('.temporary-word');
