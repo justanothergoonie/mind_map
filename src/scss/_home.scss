@@ -2,6 +2,7 @@
 .mind-map-container {
 	font-family: 'Patrick Hand', cursive;
 	position: relative;
+	// background-image: url(../../dist/img/background.svg);
 	width: 100vw;
 	height: 100vh;
 	// border: 2px solid greenyellow;
@@ -60,6 +61,7 @@
 			padding: 5px 10px;
 			text-transform: uppercase;
 			position: absolute;
+			letter-spacing: 0.06em;
 			border-radius: 9px;
 			box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 			&.pb-pitb {
