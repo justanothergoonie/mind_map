@@ -52,7 +52,7 @@ $words = $wordManager->get_mind_words();
             </div>
             <?php endforeach; ?>
 
-            <div class="word temporary-word pb-pitb">
+            <div class="word temporary-word">
                 <p>
                     <span>WORD</span>
                     <sup style="font-size: 1rem;">Name</sup>
