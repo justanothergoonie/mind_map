@@ -25,6 +25,7 @@ plusMinusFields.forEach((plusMinusField) => {
 		if (val > max) val = max;
 		field.value = val;
 		console.log(val);
+		field.dispatchEvent(new Event('change')); // CS if we have fake buttons altering the value, it doesnt dispatch normal change events, so we have to do it manually
 	});
 	minusBtn.addEventListener('click', function (e) {
 		e.preventDefault();
@@ -32,5 +33,6 @@ plusMinusFields.forEach((plusMinusField) => {
 		if (val < min) val = min;
 		field.value = val;
 		console.log(val);
+		field.dispatchEvent(new Event('change')); // CS if we have fake buttons altering the value, it doesnt dispatch normal change events, so we have to do it manually
 	});
 });

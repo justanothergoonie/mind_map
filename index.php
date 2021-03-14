@@ -30,7 +30,7 @@ $words = $wordManager->get_mind_words();
 
 <body>
     <div class="mind-map-container">
-        <div class="mind-map debug">
+        <div class="mind-map">
             <button class="make-a-word">
                 <div class="long-cross">
                 </div>
@@ -41,9 +41,7 @@ $words = $wordManager->get_mind_words();
             <div class="word <?php echo $word['style']; ?>" style="
                left:<?php echo $word['x']; ?>px; 
                top:<?php echo $word['y']; ?>px; 
-               font-family: Billy; 
-               transform:rotate(<?php echo $word['rotation']; ?>deg); 
-                   transform: translate(-50%, -50%);
+               transform: translate(-50%, -50%) rotate(<?php echo $word['rotation']; ?>deg);
                ">
                 <p style="font-size:<?php echo $word['size']; ?>px;">
                     <?php echo $word['word']; ?>
@@ -53,6 +51,14 @@ $words = $wordManager->get_mind_words();
                 </p>
             </div>
             <?php endforeach; ?>
+
+            <div class="word temporary-word pb-pitb">
+                <p>
+                    <span>WORD</span>
+                    <sup style="font-size: 1rem;">Name</sup>
+                </p>
+            </div>
+
             <?php for ($x = 1; $x < 20; $x++) : ?>
             <?php for ($y = 1; $y < 20; $y++) : ?>
             <div class="debug" style="left: <?php echo $x * 500; ?>px; top: <?php echo $y * 500; ?>px;">
@@ -91,7 +97,7 @@ $words = $wordManager->get_mind_words();
         </div>
         <div class="big-spin">
             <div class="size">
-                <div class="size-icon plus-minus-field" data-step=16 data-min=16 data-default=16 data-max=56>
+                <div class="size-icon plus-minus-field" data-step=16 data-min=16 data-default=32 data-max=56>
                     <!-- <div> -->
                     <input type="number" name="the_size" class="the-size" value="" readonly>
                     <div class="button-holder">
@@ -138,6 +144,7 @@ $words = $wordManager->get_mind_words();
         </div>
         <input class="save-word" type="submit">
     </form>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/gsap.min.js"></script>
     <script src="dist/js/utils.js"></script>
     <script src="dist/js/main.js"></script>
     <script src="dist/js/drag-to-scroll.js"></script>
