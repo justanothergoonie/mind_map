@@ -54,10 +54,13 @@ document.querySelector('.name-input').addEventListener('input', function () {
 	document.querySelector('.temporary-word sup').innerHTML = this.innerHTML;
 });
 document.querySelector('.the-size').addEventListener('change', function () {
-	// document.querySelector('.temporary-word p').style.fontSize = this.value + 'px';
+	// document.querySelector('.temporary-word p').style.fontSize =
+	// 	this.value + 'px';
 	gsap.set('.temporary-word p', { duration: 0.3, fontSize: this.value });
 });
 document.querySelector('.the-spin').addEventListener('change', function () {
+	// document.querySelector('.temporary-word p').style.transform =
+	// 	'rotate("this.value" + deg)';
 	gsap.to('.temporary-word', { duration: 0.3, rotation: this.value });
 });
 

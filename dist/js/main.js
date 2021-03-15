@@ -1,2 +1,23 @@
-console.log("mind map yo"),document.querySelector(".mind-map-container").scrollTo(5e3-window.innerWidth/2,5e3-window.innerHeight/2);let values=document.querySelectorAll(".style-buttons"),valuesAr=[],theStyle=document.querySelector(".the-true-style");for(let e in values){let l=values[e],t=l.value;console.log(t),l.addEventListener("click",(function(){theStyle.value=t,console.log(theStyle.value)}))}
+"use strict";
+
+console.log("mind map yo"); // scroll to the center of the mind map
+
+document.querySelector('.mind-map-container').scrollTo(5000 - window.innerWidth / 2, 5000 - window.innerHeight / 2);
+var values = document.querySelectorAll('.style-buttons');
+var valuesAr = [];
+var theStyle = document.querySelector('.the-true-style');
+
+var _loop = function _loop(v) {
+  var indivPut = values[v];
+  var indivPutValue = indivPut.value;
+  console.log(indivPutValue);
+  indivPut.addEventListener('click', function () {
+    theStyle.value = indivPutValue;
+    console.log(theStyle.value);
+  });
+};
+
+for (var v in values) {
+  _loop(v);
+}
 //# sourceMappingURL=main.js.map

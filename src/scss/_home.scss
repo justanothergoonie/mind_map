@@ -385,15 +385,16 @@
 	}
 	&.showing {
 		position: fixed;
-		top: 0;
-		margin: 1%;
+		top: 0px;
 		display: flex;
 		flex-direction: column;
 		justify-content: space-around;
 		background-color: rgba(0, 0, 20, 0.5);
+
 		@include bp-med {
-			right: 0;
-			margin: 1%;
+			transform: scale(0.75);
+			right: -95px;
+			top: -65px;
 		}
 	}
 	&.hidden {
