@@ -589,7 +589,6 @@ body {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-around;
-	background-color: rgba(0, 0, 20, 0.5);
 }
 
 @media screen and (min-width: 768px) {
